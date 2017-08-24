@@ -75,3 +75,19 @@ mat-lbl:hasManufacturerNumber
       rdfs:domain mat-lbl:Manufacturer;
       rdfs:range xsd:string;
 .
+
+mat-lbl:hasManufacturerLocation
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "hasManufacturerLocation"@en ;
+      rdfs:comment "Link the Manufacturer with the description of the Location" @en ;
+      rdfs:domain mat-lbl:Manufacturer;
+      rdfs:range mat-lbl:ManufacturerLocation;
+.
+
+
+mat-lbl:ManufacturerLocation
+      rdf:type owl:Class ;
+      rdfs:label "ManufacturerLocation"@en ;
+      rdfs:comment "Identification of the manufacturing location (preferred the location of the final test of the component) as mutually defined between supplier and respective customer."@en ;
+      skos:example "DEU-BERLIN - In case of only one location in town; DEU-BERLIN1, DEU-BERLIN2  - In case of two location in town" @en;
+.
