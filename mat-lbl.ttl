@@ -23,9 +23,8 @@ mat-lbl:  rdf:type owl:Ontology ;
       dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Informationi for Purchased Production Parts" ;
       dc11:title "MAT-Label Vocabulary"@en ;
       dc:created "2017-08-23"^^xsd:date ;
-      dc:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> , 
-                   <http://dbpedia.org/resource/German_National_Library_of_Science_and_Technology> ;
-      vann:preferredNamespacePrefix "mat-lbl" ;
+      dc:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> ;
+      vann:preferredNamespacePrefix "sto" ;
       vann:preferredNamespaceUri "https://w3id.org/i40/mat-lbl#" ;
       owl:versionInfo "0.1" .
 
@@ -51,10 +50,19 @@ mat-lbl:hasManufacturer
       rdfs:range mat-lbl:Manufacturer;
 .
 
+mat-lbl:hasManufacturerName
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Manufacturer"@en ;
+      rdfs:comment "The name of the Manufacturer. "@en ;
+      rdfs:domain mat-lbl:Manufacturer;
+      rdfs:range xsd:string;
+.
+
 mat-lbl:hasPartNumber
       rdf:type owl:DatatypeProperty ;
       rdfs:label "hasPartNumber"@en ;
       rdfs:comment "Parts number under which the manufacturer identifies the part and which is used for the release of the part by the Customer. "@en ;
-      rdfs:domain mat-lbl:Manufacturer;
+      rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string;
+      skos:example "SL105C103MAA-S";
 .
