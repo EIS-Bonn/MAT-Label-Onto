@@ -31,4 +31,4 @@ mat-lbl:  rdf:type owl:Ontology ;
 mat-lbl:PartPackaging
       rdf:type owl:Class ;
       rdfs:label "PartPackaging"@en ;
-      rdfs:comment "The Smallest Package does not contain any additional sub-packaging usually. "@en ;
+      rdfs:comment "The Smallest Package does not contain any additional sub-packaging usually. "@en .
