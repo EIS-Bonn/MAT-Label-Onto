@@ -28,6 +28,7 @@ mat-lbl:  rdf:type owl:Ontology ;
       vann:preferredNamespaceUri "https://w3id.org/i40/mat-lbl#" ;
       owl:versionInfo "0.1" .
 
+
 mat-lbl:PartPackaging
       rdf:type owl:Class ;
       rdfs:label "PartPackaging"@en ;
