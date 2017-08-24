@@ -49,3 +49,11 @@ mat-lbl:hasManufacturer
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range mat-lbl:Manufacturer;
 .
+
+mat-lbl:hasPartNumber
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "hasPartNumber"@en ;
+      rdfs:comment "Parts number under which the manufacturer identifies the part and which is used for the release of the part by the Customer. "@en ;
+      rdfs:domain mat-lbl:Manufacturer;
+      rdfs:range xsd:string;
+.
