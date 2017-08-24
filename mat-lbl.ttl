@@ -97,3 +97,27 @@ mat-lbl:PhysicalLabel
       rdfs:label "PhysicalLabel"@en ;
       rdfs:comment "Recycling regulations have to be obeyed"@en ;
 .
+
+mat-lbl:NonremovableLabel
+      rdf:type owl:Class ;
+	  rdfs:subclassOf mat-lbl:PhysicalLabel ;
+      rdfs:label "NonremovableLabel"@en ;
+.
+
+mat-lbl:PeelableLabel
+      rdf:type owl:Class ;
+	  rdfs:subclassOf mat-lbl:PhysicalLabel;
+      rdfs:label "PeelableLabel"@en ;
+.
+
+mat-lbl:FaceMaterial
+      rdf:type owl:Class ;
+      rdfs:label "FaceMaterial"@en ;
+.
+
+mat-lbl:hasFaceMaterial
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "FaceMaterial"@en ;
+      rdfs:domain mat-lbl:PhysicalLabel;
+      rdfs:range mat-lbl:FaceMaterial;
+.
