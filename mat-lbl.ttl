@@ -100,13 +100,13 @@ mat-lbl:PhysicalLabel
 
 mat-lbl:NonremovableLabel
       rdf:type owl:Class ;
-	  rdfs:subclassOf mat-lbl:PhysicalLabel ;
+	  rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "NonremovableLabel"@en ;
 .
 
 mat-lbl:PeelableLabel
       rdf:type owl:Class ;
-	  rdfs:subclassOf mat-lbl:PhysicalLabel;
+	  rdfs:subClassOf mat-lbl:PhysicalLabel;
       rdfs:label "PeelableLabel"@en ;
 .
 
