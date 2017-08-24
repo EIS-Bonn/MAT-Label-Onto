@@ -30,7 +30,7 @@ mat-lbl:  rdf:type owl:Ontology ;
                   <http://sda.cs.uni-bonn.de/people/lavdim-halilaj> ;
 
       dc:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> ;
-      vann:preferredNamespacePrefix "sto" ;
+      vann:preferredNamespacePrefix "mat-lbl" ;
       vann:preferredNamespaceUri "https://w3id.org/i40/mat-lbl#" ;
       owl:versionInfo "0.1" ;
 .
@@ -124,6 +124,19 @@ mat-lbl:PhysicalLabel
       rdf:type owl:Class ;
       rdfs:label "PhysicalLabel"@en ;
       rdfs:comment "Recycling regulations have to be obeyed"@en ;
+.
+
+mat-lbl:Adhesive
+      rdf:type owl:Class ;
+      rdfs:label "Adhesive"@en ;
+      owl:oneOf (mat-lbl:permanent mat-lbl:removable) ;
+.
+
+mat-lbl:hasAdhesive
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "Adhesive"@en ;
+      rdfs:domain mat-lbl:PhysicalLabel ;
+      rdfs:range mat-lbl:Adhesive ; 
 .
 
 mat-lbl:NonremovableLabel
