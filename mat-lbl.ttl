@@ -143,6 +143,7 @@ mat-lbl:NonremovableLabel
       rdf:type owl:Class ;
 	  rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "NonremovableLabel"@en ;
+      mat-lbl:hasAdhesive mat-lbl:permanent ;
       rdfs:comment "With permanent adhesive adjusted to the material of the smallest package unit."@en ;
 .
 
@@ -150,6 +151,7 @@ mat-lbl:PeelableLabel
       rdf:type owl:Class ;
 	  rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "PeelableLabel"@en ;
+      mat-lbl:hasAdhesive mat-lbl:removable ;
       rdfs:comment "With removable adhesive adjusted to the material of the smallest package unit, residue free."@en ;
 .
 
