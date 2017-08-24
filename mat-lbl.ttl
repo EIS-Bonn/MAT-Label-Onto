@@ -23,8 +23,9 @@ mat-lbl:  rdf:type owl:Ontology ;
       dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Informationi for Purchased Production Parts" ;
       dc11:title "MAT-Label Vocabulary"@en ;
       dc:created "2017-08-23"^^xsd:date ;
-      dc:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> ;
-      vann:preferredNamespacePrefix "sto" ;
+      dc:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> , 
+                   <http://dbpedia.org/resource/German_National_Library_of_Science_and_Technology> ;
+      vann:preferredNamespacePrefix "mat-lbl" ;
       vann:preferredNamespaceUri "https://w3id.org/i40/mat-lbl#" ;
       owl:versionInfo "0.1" .
 
