@@ -24,7 +24,7 @@ mat-lbl:  rdf:type owl:Ontology ;
       dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Information for Purchased Production Parts" ;
       dc11:title "MAT-Label Vocabulary"@en ;
       dc:created "2017-08-23"^^xsd:date ;
-      dct:creator <http://www.uni-trier.de/?id=45272>, 
+      dct:creator <https://orcid.org/0000-0002-1019-3606>, 
                   <http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/>, 
                   <http://sda.cs.uni-bonn.de/people/niklas-petersen> ,
                   <http://sda.cs.uni-bonn.de/people/lavdim-halilaj> ;
@@ -35,12 +35,11 @@ mat-lbl:  rdf:type owl:Ontology ;
       owl:versionInfo "0.1" ;
 .
 
-<http://www.uni-trier.de/?id=45272>
+<https://orcid.org/0000-0002-1019-3606>
     rdf:type schema:Person;
     rdfs:label "Anna Kasprzik";
     schema:affiliation <http://dbpedia.org/resource/German_National_Library_of_Science_and_Technology>;
 .
-
 
 <http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/>
     rdf:type schema:Person;
