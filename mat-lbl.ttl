@@ -2,7 +2,7 @@
 @prefix cc:      <http://creativecommons.org/ns#> .
 @prefix dc:      <http://purl.org/dc/terms/> .
 @prefix dc11:    <http://purl.org/dc/elements/1.1/> .
-@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix dct:     <http://purl.org/dc/terms/> .
 @prefix deo:     <http://purl.org/spar/deo/> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix muto:    <http://purl.org/muto/core#> .
@@ -18,14 +18,14 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix geo:     <http://www.geonames.org/ontology#> .
 @prefix dbo:     <http://dbpedia.org/ontology#> .
-@prefix dbr:     <http://dbpedia.org/resource#>.
+@prefix dbr:     <http://dbpedia.org/resource#> .
 
 mat-lbl:  rdf:type owl:Ontology ;
       dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Information for Purchased Production Parts" ;
       dc11:title "MAT-Label Vocabulary"@en ;
       dc:created "2017-08-23"^^xsd:date ;
-      dct:creator <https://orcid.org/0000-0002-1019-3606>, 
-                  <http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/>, 
+      dct:creator <https://orcid.org/0000-0002-1019-3606> , 
+                  <http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/> , 
                   <http://sda.cs.uni-bonn.de/people/niklas-petersen> ,
                   <http://sda.cs.uni-bonn.de/people/lavdim-halilaj> ;
 
@@ -36,84 +36,82 @@ mat-lbl:  rdf:type owl:Ontology ;
 .
 
 <https://orcid.org/0000-0002-1019-3606>
-    rdf:type schema:Person;
-    rdfs:label "Anna Kasprzik";
-    schema:affiliation <http://dbpedia.org/resource/German_National_Library_of_Science_and_Technology>;
+    rdf:type schema:Person ;
+    rdfs:label "Anna Kasprzik" ;
+    schema:affiliation <http://dbpedia.org/resource/German_National_Library_of_Science_and_Technology> ;
 .
 
 <http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/>
-    rdf:type schema:Person;
-    rdfs:label "Irlán Grangel-González";
-    schema:affiliation <http://dbpedia.org/resource/University_of_Bonn>;
+    rdf:type schema:Person ;
+    rdfs:label "Irlán Grangel-González" ;
+    schema:affiliation <http://dbpedia.org/resource/University_of_Bonn> ;
 .
 
 <http://sda.cs.uni-bonn.de/people/niklas-petersen/>
-    rdf:type schema:Person;
-    rdfs:label "Niklas Petersen";
-    schema:affiliation <http://dbpedia.org/resource/University_of_Bonn>;
+    rdf:type schema:Person ;
+    rdfs:label "Niklas Petersen" ;
+    schema:affiliation <http://dbpedia.org/resource/University_of_Bonn> ;
 .
 
 <http://sda.cs.uni-bonn.de/people/lavdim-halilaj/>
-    rdf:type schema:Person;
-    rdfs:label "Lavdim Halilaj";
-    schema:affiliation <http://dbpedia.org/resource/University_of_Bonn>;
+    rdf:type schema:Person ;
+    rdfs:label "Lavdim Halilaj" ;
+    schema:affiliation <http://dbpedia.org/resource/University_of_Bonn> ;
 .
 
 mat-lbl:PartPackaging
       rdf:type owl:Class ;
       rdfs:label "PartPackaging"@en ;
-      rdfs:comment "The Smallest Package does not contain any additional sub-packaging usually. "@en ;
+      rdfs:comment "The Smallest Package does not contain any additional sub-packaging usually."@en ;
 .
 
 mat-lbl:Manufacturer
-      rdf:type owl:Class ;
-      rdfs:label "Manufacturer"@en ;
-      rdfs:comment "A company that produces goods in large numbers. "@en ;
+      rdf:type owl:Class;
+      rdfs:label "Manufacturer"@en;
+      rdfs:comment "A company that produces goods in large numbers."@en;
 .
-
 
 mat-lbl:hasManufacturer
       rdf:type owl:ObjectProperty ;
       rdfs:label "Manufacturer"@en ;
-      rdfs:comment "A company that produces goods in large numbers. "@en ;
-      rdfs:domain mat-lbl:PartPackaging;
-      rdfs:range mat-lbl:Manufacturer;
+      rdfs:comment "A company that produces goods in large numbers."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range mat-lbl:Manufacturer ;
 .
 
 mat-lbl:hasManufacturerName
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Manufacturer"@en ;
-      rdfs:comment "The name of the Manufacturer. "@en ;
-      rdfs:domain mat-lbl:Manufacturer;
-      rdfs:range xsd:string;
+      rdfs:comment "The name of the Manufacturer."@en ;
+      rdfs:domain mat-lbl:Manufacturer ;
+      rdfs:range xsd:string ;
 .
 
 mat-lbl:hasPartNumber
       rdf:type owl:DatatypeProperty ;
       rdfs:label "hasPartNumber"@en ;
-      rdfs:comment "Parts number under which the manufacturer identifies the part and which is used for the release of the part by the Customer. "@en ;
-      rdfs:domain mat-lbl:PartPackaging;
-      rdfs:range xsd:string;
-      skos:example "SL105C103MAA-S";
+      rdfs:comment "Parts number under which the manufacturer identifies the part and which is used for the release of the part by the Customer."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ;
+      skos:example "SL105C103MAA-S" ;
 .
 
 mat-lbl:hasManufacturerNumber
       rdf:type owl:DatatypeProperty ;
       rdf:type owl:FunctionalProperty ;
       rdfs:label "hasManufacturerNumber"@en ;
-      rdfs:comment "Explicit identification of the manufacturer mutually agreed between customer and supplier. "@en ;
-      rdfs:domain mat-lbl:Manufacturer;
-      rdfs:range xsd:string;
+      rdfs:comment "Explicit identification of the manufacturer mutually agreed between customer and supplier."@en ;
+      rdfs:domain mat-lbl:Manufacturer ;
+      rdfs:range xsd:string ;
 .
 
 mat-lbl:hasManufacturerLocation
       rdf:type owl:ObjectProperty ;
       rdfs:label "hasManufacturerLocation"@en ;
       rdfs:comment "Link the Manufacturer with the description of the Location" @en ;
-      rdfs:domain mat-lbl:Manufacturer;
-      rdfs:range mat-lbl:ManufacturerLocation;
+      rdfs:domain mat-lbl:Manufacturer ;
+      rdfs:range mat-lbl:ManufacturerLocation ;
 .
-
 
 mat-lbl:ManufacturerLocation
       rdf:type owl:Class ;
@@ -136,7 +134,7 @@ mat-lbl:NonremovableLabel
 
 mat-lbl:PeelableLabel
       rdf:type owl:Class ;
-	  rdfs:subClassOf mat-lbl:PhysicalLabel;
+	  rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "PeelableLabel"@en ;
 .
 
