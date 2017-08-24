@@ -130,23 +130,25 @@ mat-lbl:NonremovableLabel
       rdf:type owl:Class ;
 	  rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "NonremovableLabel"@en ;
+      rdfs:comment "With permanent adhesive adjusted to the material of the smallest package unit."@en ;
 .
 
 mat-lbl:PeelableLabel
       rdf:type owl:Class ;
 	  rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "PeelableLabel"@en ;
+      rdfs:comment "With removable adhesive adjusted to the material of the smallest package unit, residue free."@en ;
 .
 
 mat-lbl:FaceMaterial
       rdf:type owl:Class ;
       rdfs:label "FaceMaterial"@en ;
+      owl:oneOf (mat-lbl:white mat-lbl:reversecoated mat-lbl:mat) ;
 .
 
 mat-lbl:hasFaceMaterial
       rdf:type owl:ObjectProperty ;
       rdfs:label "FaceMaterial"@en ;
-      rdfs:domain mat-lbl:PhysicalLabel;
-      rdfs:range mat-lbl:FaceMaterial;
-      owl:oneOf (mat-lbl:white mat-lbl:reversecoated mat-lbl:mat) ;
+      rdfs:domain mat-lbl:PhysicalLabel ;
+      rdfs:range mat-lbl:FaceMaterial ; 
 .
