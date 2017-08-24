@@ -123,18 +123,20 @@ mat-lbl:ManufacturerLocation
 mat-lbl:PhysicalLabel
       rdf:type owl:Class ;
       rdfs:label "PhysicalLabel"@en ;
-      rdfs:comment "Recycling regulations have to be obeyed"@en ;
+      rdfs:comment "Recycling regulations have to be obeyed."@en ;
 .
 
 mat-lbl:Adhesive
       rdf:type owl:Class ;
       rdfs:label "Adhesive"@en ;
+      rdfs:comment "Material for the back of physical labels."@en ;
       owl:oneOf (mat-lbl:permanent mat-lbl:removable) ;
 .
 
 mat-lbl:hasAdhesive
       rdf:type owl:ObjectProperty ;
       rdfs:label "hasAdhesive"@en ;
+      rdfs:comment "Applies to physical labels."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range mat-lbl:Adhesive ; 
 .
@@ -158,12 +160,14 @@ mat-lbl:PeelableLabel
 mat-lbl:FaceMaterial
       rdf:type owl:Class ;
       rdfs:label "FaceMaterial"@en ;
+      rdfs:comment "Applies to physical labels."@en ;
       owl:oneOf (mat-lbl:white mat-lbl:reversecoated mat-lbl:mat) ;
 .
 
 mat-lbl:hasFaceMaterial
       rdf:type owl:ObjectProperty ;
       rdfs:label "hasFaceMaterial"@en ;
+      rdfs:comment "Material for the face of physical labels."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range mat-lbl:FaceMaterial ; 
 .
