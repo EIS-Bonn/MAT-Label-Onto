@@ -73,7 +73,7 @@ mat-lbl:Manufacturer
 
 mat-lbl:hasManufacturer
       rdf:type owl:ObjectProperty ;
-      rdfs:label "Manufacturer"@en ;
+      rdfs:label "hasManufacturer"@en ;
       rdfs:comment "A company that produces goods in large numbers."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range mat-lbl:Manufacturer ;
@@ -81,7 +81,7 @@ mat-lbl:hasManufacturer
 
 mat-lbl:hasManufacturerName
       rdf:type owl:DatatypeProperty ;
-      rdfs:label "Manufacturer"@en ;
+      rdfs:label "hasManufacturerName"@en ;
       rdfs:comment "The name of the Manufacturer."@en ;
       rdfs:domain mat-lbl:Manufacturer ;
       rdfs:range xsd:string ;
@@ -134,7 +134,7 @@ mat-lbl:Adhesive
 
 mat-lbl:hasAdhesive
       rdf:type owl:ObjectProperty ;
-      rdfs:label "Adhesive"@en ;
+      rdfs:label "hasAdhesive"@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range mat-lbl:Adhesive ; 
 .
@@ -163,7 +163,7 @@ mat-lbl:FaceMaterial
 
 mat-lbl:hasFaceMaterial
       rdf:type owl:ObjectProperty ;
-      rdfs:label "FaceMaterial"@en ;
+      rdfs:label "hasFaceMaterial"@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range mat-lbl:FaceMaterial ; 
 .
