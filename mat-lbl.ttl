@@ -108,23 +108,38 @@ mat-lbl:NonremovableLabel
       rdf:type owl:Class ;
 	  rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "NonremovableLabel"@en ;
+      mat-lbl:hasAdhesive mat-lbl:permanent ;
 .
 
 mat-lbl:PeelableLabel
       rdf:type owl:Class ;
 	  rdfs:subClassOf mat-lbl:PhysicalLabel;
       rdfs:label "PeelableLabel"@en ;
+      mat-lbl:hasAdhesive mat-lbl:removable ;
 .
 
 mat-lbl:FaceMaterial
       rdf:type owl:Class ;
       rdfs:label "FaceMaterial"@en ;
+      owl:oneOf (mat-lbl:white mat-lbl:reversecoated mat-lbl:mat) ;
 .
 
 mat-lbl:hasFaceMaterial
       rdf:type owl:ObjectProperty ;
-      rdfs:label "FaceMaterial"@en ;
-      rdfs:domain mat-lbl:PhysicalLabel;
-      rdfs:range mat-lbl:FaceMaterial;
-      owl:oneOf (mat-lbl:white mat-lbl:reversecoated mat-lbl:mat) ;
+      rdfs:label "hasFaceMaterial"@en ;
+      rdfs:domain mat-lbl:PhysicalLabel ;
+      rdfs:range mat-lbl:FaceMaterial ;
+.
+
+mat-lbl:Adhesive
+      rdf:type owl:Class ;
+      rdfs:label "Adhesive"@en ;
+      owl:oneOf (mat-lbl:permanent mat-lbl:removable) ;
+.
+
+mat-lbl:hasAdhesive
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "hasAdhesive"@en ;
+      rdfs:domain mat-lbl:PhysicalLabel ;
+      rdfs:range mat-lbl:Adhesive ;
 .
