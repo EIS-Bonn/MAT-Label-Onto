@@ -21,7 +21,7 @@
 @prefix dbr:     <http://dbpedia.org/resource#>.
 
 mat-lbl:  rdf:type owl:Ontology ;
-      dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Informationi for Purchased Production Parts" ;
+      dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Information for Purchased Production Parts" ;
       dc11:title "MAT-Label Vocabulary"@en ;
       dc:created "2017-08-23"^^xsd:date ;
       dct:creator <http://www.uni-trier.de/?id=45272>, 
