@@ -66,3 +66,12 @@ mat-lbl:hasPartNumber
       rdfs:range xsd:string;
       skos:example "SL105C103MAA-S";
 .
+
+mat-lbl:hasManufacturerNumber
+      rdf:type owl:DatatypeProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:label "hasManufacturerNumber"@en ;
+      rdfs:comment "Explicit identification of the manufacturer mutually agreed between customer and supplier. "@en ;
+      rdfs:domain mat-lbl:Manufacturer;
+      rdfs:range xsd:string;
+.
