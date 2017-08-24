@@ -23,38 +23,10 @@ mat-lbl:  rdf:type owl:Ontology ;
       dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Informationi for Purchased Production Parts" ;
       dc11:title "MAT-Label Vocabulary"@en ;
       dc:created "2017-08-23"^^xsd:date ;
-      dc:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft>,
-                   <http://dbpedia.org/resource/German_National_Library_of_Science_and_Technology>;
+      dc:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> ;
       vann:preferredNamespacePrefix "sto" ;
       vann:preferredNamespaceUri "https://w3id.org/i40/mat-lbl#" ;
-      owl:versionInfo "0.1" ;
-.
-
-<http://www.uni-trier.de/?id=45272>
-    rdf:type schema:Person;
-    rdfs:label "Anna Kasprzik";
-    schema:affiliation <http://dbpedia.org/resource/German_National_Library_of_Science_and_Technology>;
-.
-
-
-<http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/>
-    rdf:type schema:Person;
-    rdfs:label "Irlán Grangel-González";
-    schema:affiliation <http://dbpedia.org/resource/University_of_Bonn>;
-.
-
-<http://sda.cs.uni-bonn.de/people/niklas-petersen/>
-    rdf:type schema:Person;
-    rdfs:label "Niklas Petersen";
-    schema:affiliation <http://dbpedia.org/resource/University_of_Bonn>;
-.
-
-<http://sda.cs.uni-bonn.de/people/lavdim-halilaj/>
-    rdf:type schema:Person;
-    rdfs:label "Lavdim Halilaj";
-    schema:affiliation <http://dbpedia.org/resource/University_of_Bonn>;
-.
-
+      owl:versionInfo "0.1" .
 
 
 mat-lbl:PartPackaging
@@ -148,4 +120,5 @@ mat-lbl:hasFaceMaterial
       rdfs:label "FaceMaterial"@en ;
       rdfs:domain mat-lbl:PhysicalLabel;
       rdfs:range mat-lbl:FaceMaterial;
+      owl:oneOf (mat-lbl:white mat-lbl:reversecoated mat-lbl:mat) ;
 .
