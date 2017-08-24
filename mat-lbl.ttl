@@ -32,4 +32,20 @@ mat-lbl:  rdf:type owl:Ontology ;
 mat-lbl:PartPackaging
       rdf:type owl:Class ;
       rdfs:label "PartPackaging"@en ;
-      rdfs:comment "The Smallest Package does not contain any additional sub-packaging usually. "@en .
+      rdfs:comment "The Smallest Package does not contain any additional sub-packaging usually. "@en ;
+.
+
+mat-lbl:Manufacturer
+      rdf:type owl:Class ;
+      rdfs:label "Manufacturer"@en ;
+      rdfs:comment "A company that produces goods in large numbers. "@en ;
+.
+
+
+mat-lbl:hasManufacturer
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "Manufacturer"@en ;
+      rdfs:comment "A company that produces goods in large numbers. "@en ;
+      rdfs:domain mat-lbl:PartPackaging;
+      rdfs:range mat-lbl:Manufacturer;
+.
