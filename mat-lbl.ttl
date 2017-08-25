@@ -65,6 +65,7 @@ mat-lbl:PartPackaging
       rdfs:comment "The Smallest Package does not contain any additional sub-packaging usually."@en ;
 .
 
+# maybe dbo:Company is better 
 mat-lbl:Manufacturer
       rdf:type owl:Class;
       rdfs:label "Manufacturer"@en;
@@ -79,46 +80,152 @@ mat-lbl:hasManufacturer
       rdfs:range mat-lbl:Manufacturer ;
 .
 
-mat-lbl:hasManufacturerName
+mat-lbl:labelVersion
       rdf:type owl:DatatypeProperty ;
-      rdfs:label "hasManufacturerName"@en ;
-      rdfs:comment "The name of the Manufacturer."@en ;
-      rdfs:domain mat-lbl:Manufacturer ;
-      rdfs:range xsd:string ;
-.
-
-mat-lbl:hasPartNumber
-      rdf:type owl:DatatypeProperty ;
-      rdfs:label "hasPartNumber"@en ;
-      rdfs:comment "Parts number under which the manufacturer identifies the part and which is used for the release of the part by the Customer."@en ;
+      rdfs:label "Label Version"@en ;
+      rdfs:comment "The revision level is a fixed entry and serves the recognition of the label or its version"@en ;
       rdfs:domain mat-lbl:PartPackaging ;
-      rdfs:range xsd:string ;
-      skos:example "SL105C103MAA-S" ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "12S" ; 
 .
 
-mat-lbl:hasManufacturerNumber
+mat-lbl:customerPartNumber
       rdf:type owl:DatatypeProperty ;
-      rdf:type owl:FunctionalProperty ;
-      rdfs:label "hasManufacturerNumber"@en ;
-      rdfs:comment "Explicit identification of the manufacturer mutually agreed between customer and supplier."@en ;
-      rdfs:domain mat-lbl:Manufacturer ;
-      rdfs:range xsd:string ;
+      rdfs:label "Customer Part Number"@en ;
+      rdfs:comment "Part number of the customer."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "P" ; 
 .
 
-mat-lbl:hasManufacturerLocation
-      rdf:type owl:ObjectProperty ;
-      rdfs:label "hasManufacturerLocation"@en ;
-      rdfs:comment "Link the Manufacturer with the description of the Location" @en ;
-      rdfs:domain mat-lbl:Manufacturer ;
-      rdfs:range mat-lbl:ManufacturerLocation ;
+mat-lbl:manufacturerPartNumber 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Manufacturer Part Number"@en ;
+      rdfs:comment "Internal manufacturer part number."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      skos:example "SL105C103MAA-S" ;
+      mat-lbl:dataIdentifier "1P" ; 
 .
 
-mat-lbl:ManufacturerLocation
-      rdf:type owl:Class ;
-      rdfs:label "ManufacturerLocation"@en ;
-      rdfs:comment "Identification of the manufacturing location (preferred the location of the final test of the component) as mutually defined between supplier and respective customer."@en ;
+mat-lbl:orderingCode 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Code for the part which non-ambigously can be used for ordering it. Compared to the Manufacturer Part number, the Ordering Code may obtain more information, e.g. Software Version in case of Microcontrollers or package form."@en ;
+      rdfs:comment "Internal manufacturer part number."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "31P" ; 
+.
+
+
+mat-lbl:partDescription 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Part Description"@en ;
+      rdfs:comment "Clear-text description of the part (or part name), so that persons who are not familiar with the manufacturer's naming convention can understand what kind of component this is."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+.
+
+mat-lbl:manufacturerNumber 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Manufacturer Number"@en ;
+      rdfs:comment "Explicit identification for the manufacturer, e.g. DUNS-Nr. or mutual agreed manufacturer number."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "12V" ; 
+.
+
+mat-lbl:manufacturerLocation 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Manufacturer Location"@en ;
+      rdfs:comment "Naming of the manufacturing location / locations."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
       skos:example "DEU-BERLIN - In case of only one location in town; DEU-BERLIN1, DEU-BERLIN2  - In case of two location in town" @en;
+      mat-lbl:dataIdentifier "10V" ; 
 .
+
+mat-lbl:revisionLevel 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Revision Level"@en ;
+      rdfs:comment "Revision status of the part."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "2P" ; 
+.
+
+mat-lbl:additionalPartInformation 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Additional Part Number"@en ;
+      rdfs:comment "Used differently for each plan, flexible filled, e.g. brightness of the LEDs."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "20P" ; 
+.
+
+mat-lbl:manufacturingDate 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Date of Manufacturing"@en ;
+      rdfs:comment "Date of manufacturing is related to the last manufacturing process."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "6D" ; 
+.
+
+
+mat-lbl:expirationDate 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Expiration Date"@en ;
+      rdfs:comment "The Expiration Date of the part (defined by the manufacturer, depending on the production date)."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "14D" ; 
+.
+
+# np: rohs = ??
+mat-lbl:rohs 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "RoHS"@en ;
+      rdfs:comment "Indicator for RoHS compliance. N: no RoHS, Y: RoHS, 0: not acceptable."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "30P" ; 
+.
+
+mat-lbl:msLevel 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "MS-level"@en ;
+      rdfs:comment "Moisture Sensivity Lebel according to IPC/JEDEC J-STD-020."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "Z" ; 
+.
+
+mat-lbl:purchaseOrder 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Purchase Order Number"@en ;
+      rdfs:comment "Order number assigned by customer to identify a purchasing transaction."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "K" ; 
+.
+
+mat-lbl:shippingNoteNumber 
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "Shipping Note Number"@en ;
+      rdfs:comment "Shipping Note Number of the shipping note and MAT-Label must be the same."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range xsd:string ; 
+      mat-lbl:dataIdentifier "16K" ; 
+.
+
+
+
+
+
+
+
+################
 
 mat-lbl:PhysicalLabel
       rdf:type owl:Class ;
@@ -143,7 +250,7 @@ mat-lbl:hasAdhesive
 
 mat-lbl:NonremovableLabel
       rdf:type owl:Class ;
-	  rdfs:subClassOf mat-lbl:PhysicalLabel ;
+    rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "NonremovableLabel"@en ;
       mat-lbl:hasAdhesive mat-lbl:permanent ;
       rdfs:comment "With permanent adhesive adjusted to the material of the smallest package unit."@en ;
@@ -151,7 +258,7 @@ mat-lbl:NonremovableLabel
 
 mat-lbl:PeelableLabel
       rdf:type owl:Class ;
-	  rdfs:subClassOf mat-lbl:PhysicalLabel ;
+    rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "PeelableLabel"@en ;
       mat-lbl:hasAdhesive mat-lbl:removable ;
       rdfs:comment "With removable adhesive adjusted to the material of the smallest package unit, residue free."@en ;
