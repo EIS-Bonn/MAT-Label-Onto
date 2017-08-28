@@ -293,7 +293,7 @@ mat-lbl:shippingNoteNumber
       mat-lbl:DataIdentifier "16K" ; 
 .
 
-mat-lblsupplierName 
+mat-lbl:supplierName 
       rdf:type owl:DatatypeProperty ;
       rdfs:subPropertyOf mat-lbl:hasDataField ;
       rdfs:label "Shipping Note Number"@en ;
