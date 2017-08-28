@@ -26,8 +26,8 @@ mat-lbl: rdf:type owl:Ontology ;
       dc:created "2017-08-23"^^xsd:date ;
       dct:creator <https://orcid.org/0000-0002-1019-3606> , 
                   <http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/> , 
-                  <http://sda.cs.uni-bonn.de/people/niklas-petersen> ,
-                  <http://sda.cs.uni-bonn.de/people/lavdim-halilaj> ;
+                  <http://sda.cs.uni-bonn.de/people/niklas-petersen/> ,
+                  <http://sda.cs.uni-bonn.de/people/lavdim-halilaj/> ;
 
       dc:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> ;
       vann:preferredNamespacePrefix "mat-lbl" ;
@@ -64,7 +64,7 @@ mat-lbl: rdf:type owl:Ontology ;
 mat-lbl:PartPackaging
       rdf:type owl:Class ;
       rdfs:label "Part Packaging"@en ;
-      rdfs:comment "The Smallest Package does not contain any additional sub-packaging usually."@en ;
+      rdfs:comment "The smallest package does not contain any additional sub-packaging usually."@en ;
 .
 
 mat-lbl:MatLabel
