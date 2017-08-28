@@ -65,6 +65,20 @@ mat-lbl:PartPackaging
       rdfs:comment "The Smallest Package does not contain any additional sub-packaging usually."@en ;
 .
 
+mat-lbl:MatLabel
+      rdf:type owl:Class ;
+      rdfs:label "MatLabel"@en ;
+      rdfs:comment "The MAT label comprises data in human- and in machine-readable form. Data fields have to be approved by the customer plant."@en ;
+.
+
+mat-lbl:hasMatLabel
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "hasMatLabel"@en ;
+      rdfs:comment "The set of data fields assigned to a part package."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range mat-lbl:MatLabel ;
+.
+
 # maybe dbo:Company is better 
 mat-lbl:Manufacturer
       rdf:type owl:Class;
@@ -80,7 +94,33 @@ mat-lbl:hasManufacturer
       rdfs:range mat-lbl:Manufacturer ;
 .
 
-# Also need classes for customer and supplier.
+mat-lbl:Supplier
+      rdf:type owl:Class;
+      rdfs:label "Supplier"@en;
+      rdfs:comment "A company that delivers parts to customers."@en;
+.
+
+mat-lbl:hasSupplier
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "hasSupplier"@en ;
+      rdfs:comment "A company that delivers parts to customers."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range mat-lbl:Supplier ;
+.
+
+mat-lbl:Customer
+      rdf:type owl:Class;
+      rdfs:label "Customer"@en;
+      rdfs:comment "An industrial plant that orders and receives goods."@en;
+.
+
+mat-lbl:hasCustomer
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "hasCustomer"@en ;
+      rdfs:comment "An industiral plant that orders and receives goods."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range mat-lbl:Customer ;
+.
 
 mat-lbl:LabelVersion
       rdf:type owl:DatatypeProperty ;
@@ -315,7 +355,7 @@ mat-lbl:hasAdhesive
 
 mat-lbl:NonremovableLabel
       rdf:type owl:Class ;
-    rdfs:subClassOf mat-lbl:PhysicalLabel ;
+      rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "NonremovableLabel"@en ;
       mat-lbl:hasAdhesive mat-lbl:permanent ;
       rdfs:comment "With permanent adhesive adjusted to the material of the smallest package unit."@en ;
@@ -323,7 +363,7 @@ mat-lbl:NonremovableLabel
 
 mat-lbl:PeelableLabel
       rdf:type owl:Class ;
-    rdfs:subClassOf mat-lbl:PhysicalLabel ;
+      rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:label "PeelableLabel"@en ;
       mat-lbl:hasAdhesive mat-lbl:removable ;
       rdfs:comment "With removable adhesive adjusted to the material of the smallest package unit, residue free."@en ;
