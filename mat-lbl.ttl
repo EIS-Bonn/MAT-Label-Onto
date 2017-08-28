@@ -20,7 +20,7 @@
 @prefix dbo:     <http://dbpedia.org/ontology#> .
 @prefix dbr:     <http://dbpedia.org/resource#> .
 
-mat-lbl:  rdf:type owl:Ontology ;
+mat-lbl: rdf:type owl:Ontology ;
       dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Information for Purchased Production Parts" ;
       dc11:title "MAT-Label Vocabulary"@en ;
       dc:created "2017-08-23"^^xsd:date ;
@@ -80,45 +80,46 @@ mat-lbl:hasManufacturer
       rdfs:range mat-lbl:Manufacturer ;
 .
 
-mat-lbl:labelVersion
+# Also need classes for customer and supplier.
+
+mat-lbl:LabelVersion
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Label Version"@en ;
       rdfs:comment "The revision level is a fixed entry and serves the recognition of the label or its version"@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "12S" ; 
+      mat-lbl:DataIdentifier "12S" ; 
 .
 
-mat-lbl:customerPartNumber
+mat-lbl:CustomerPartNumber
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Customer Part Number"@en ;
       rdfs:comment "Part number of the customer."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "P" ; 
+      mat-lbl:DataIdentifier "P" ; 
 .
 
-mat-lbl:manufacturerPartNumber 
+mat-lbl:ManufacturerPartNumber 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Manufacturer Part Number"@en ;
       rdfs:comment "Internal manufacturer part number."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
       skos:example "SL105C103MAA-S" ;
-      mat-lbl:dataIdentifier "1P" ; 
+      mat-lbl:DataIdentifier "1P" ; 
 .
 
-mat-lbl:orderingCode 
+mat-lbl:OrderingCode 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Code for the part which non-ambigously can be used for ordering it. Compared to the Manufacturer Part number, the Ordering Code may obtain more information, e.g. Software Version in case of Microcontrollers or package form."@en ;
       rdfs:comment "Internal manufacturer part number."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "31P" ; 
+      mat-lbl:DataIdentifier "31P" ; 
 .
 
-
-mat-lbl:partDescription 
+mat-lbl:PartDescription 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Part Description"@en ;
       rdfs:comment "Clear-text description of the part (or part name), so that persons who are not familiar with the manufacturer's naming convention can understand what kind of component this is."@en ;
@@ -126,100 +127,98 @@ mat-lbl:partDescription
       rdfs:range xsd:string ; 
 .
 
-mat-lbl:manufacturerNumber 
+mat-lbl:ManufacturerNumber 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Manufacturer Number"@en ;
       rdfs:comment "Explicit identification for the manufacturer, e.g. DUNS-Nr. or mutual agreed manufacturer number."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "12V" ; 
+      mat-lbl:DataIdentifier "12V" ; 
 .
 
-mat-lbl:manufacturerLocation 
+mat-lbl:ManufacturerLocation 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Manufacturer Location"@en ;
       rdfs:comment "Naming of the manufacturing location / locations."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
       skos:example "DEU-BERLIN - In case of only one location in town; DEU-BERLIN1, DEU-BERLIN2  - In case of two location in town" @en;
-      mat-lbl:dataIdentifier "10V" ; 
+      mat-lbl:MataIdentifier "10V" ; 
 .
 
-mat-lbl:revisionLevel 
+mat-lbl:RevisionLevel 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Revision Level"@en ;
       rdfs:comment "Revision status of the part."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "2P" ; 
+      mat-lbl:DataIdentifier "2P" ; 
 .
 
-mat-lbl:additionalPartInformation 
+mat-lbl:AdditionalPartInformation 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Additional Part Number"@en ;
       rdfs:comment "Used differently for each plan, flexible filled, e.g. brightness of the LEDs."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "20P" ; 
+      mat-lbl:DataIdentifier "20P" ; 
 .
 
-mat-lbl:manufacturingDate 
+mat-lbl:ManufacturingDate 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Date of Manufacturing"@en ;
       rdfs:comment "Date of manufacturing is related to the last manufacturing process."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "6D" ; 
+      mat-lbl:DataIdentifier "6D" ; 
 .
 
-
-mat-lbl:expirationDate 
+mat-lbl:ExpirationDate 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Expiration Date"@en ;
       rdfs:comment "The Expiration Date of the part (defined by the manufacturer, depending on the production date)."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "14D" ; 
+      mat-lbl:DataIdentifier "14D" ; 
 .
 
-# np: rohs = ??
-mat-lbl:rohs 
+mat-lbl:Rohs 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "RoHS"@en ;
-      rdfs:comment "Indicator for RoHS compliance. N: no RoHS, Y: RoHS, 0: not acceptable."@en ;
+      rdfs:comment "Indicator for RoHS (restriction of the use of certain hazardous substances in electrical and electronic equipment) compliance. N: no RoHS, Y: RoHS, 0: not acceptable."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "30P" ; 
+      mat-lbl:DataIdentifier "30P" ; 
 .
 
-mat-lbl:msLevel 
+mat-lbl:MSLevel 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "MS-level"@en ;
       rdfs:comment "Moisture Sensivity Lebel according to IPC/JEDEC J-STD-020."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "Z" ; 
+      mat-lbl:DataIdentifier "Z" ; 
 .
 
-mat-lbl:purchaseOrder 
+mat-lbl:PurchaseOrder 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Purchase Order Number"@en ;
       rdfs:comment "Order number assigned by customer to identify a purchasing transaction."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "K" ; 
+      mat-lbl:DataIdentifier "K" ; 
 .
 
-mat-lbl:shippingNoteNumber 
+mat-lbl:ShippingNoteNumber 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Shipping Note Number"@en ;
       rdfs:comment "Shipping Note Number of the shipping note and MAT-Label must be the same."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ; 
-      mat-lbl:dataIdentifier "16K" ; 
+      mat-lbl:DataIdentifier "16K" ; 
 .
 
-mat-lbl:supplierName 
+mat-lbl:SupplierName 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Shipping Note Number"@en ;
       rdfs:comment "Name of the Supplier."@en ;
@@ -227,67 +226,67 @@ mat-lbl:supplierName
       rdfs:range xsd:string ;  
 .
 
-mat-lbl:supplierId 
+mat-lbl:SupplierId 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Supplier ID"@en ;
       rdfs:comment "The vendor number (of the customer) for the supplier. It has to be taken over from the order.."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ;  
-      mat-lbl:dataIdentifier "V" ; 
+      mat-lbl:DataIdentifier "V" ; 
 .
 
-mat-lbl:packageId 
+mat-lbl:PackageId 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Package ID"@en ;
       rdfs:comment "The explicit, unique number per single package. It has to be unique per supplier-id (vendor number) and package. It is always related to the smallest package unit. If possible, chronologically related to the production process (e.g. reel-ID)."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ;  
-      mat-lbl:dataIdentifier "3S" ; 
+      mat-lbl:DataIdentifier "3S" ; 
 .
 
-mat-lbl:quanitity 
+mat-lbl:Quantity 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Quantity"@en ;
       rdfs:comment "Quantity of the smallest package unit"@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ;  
-      mat-lbl:dataIdentifier "Q" ; 
+      mat-lbl:DataIdentifier "Q" ; 
 .
 
-mat-lbl:batchCounter 
+mat-lbl:BatchCounter 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Batch Counter"@en ;
       rdfs:comment "Batch Counter identifies the number of batches (1 or max. 2 batches per reel possible)."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ;  
-      mat-lbl:dataIdentifier "20T" ; 
+      mat-lbl:DataIdentifier "20T" ; 
 .
 
-mat-lbl:firstBatchNumber 
+mat-lbl:FirstBatchNumber 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Batch-No. 1"@en ;
       rdfs:comment "With this number the supplier has to be able to retroactively provide information about the batch (e.g. volume, production, delivery) A batch identification should be based on same manufacturing conditions. If a manufacturing condition changes, the batch number should be changed, too."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ;  
-      mat-lbl:dataIdentifier "1T" ; 
+      mat-lbl:DataIdentifier "1T" ; 
 .
 
-mat-lbl:secondBatchNumber 
+mat-lbl:SecondBatchNumber 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Batch-No. 2"@en ;
       rdfs:comment "Batch number for the second batch - if applicable."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ;  
-      mat-lbl:dataIdentifier "2T" ; 
+      mat-lbl:DataIdentifier "2T" ; 
 .
 
-mat-lbl:supplierData 
+mat-lbl:SupplierData 
       rdf:type owl:DatatypeProperty ;
       rdfs:label "Batch-No. 2"@en ;
       rdfs:comment "Supplier own information that may be used by the supplier."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range xsd:string ;  
-      mat-lbl:dataIdentifier "1Z" ; 
+      mat-lbl:DataIdentifier "1Z" ; 
 .
 
 
