@@ -70,7 +70,7 @@ mat-lbl:PartPackaging
 mat-lbl:MatLabel
       rdf:type owl:Class ;
       rdfs:label "MatLabel"@en ;
-      rdfs:comment "The MAT label comprises data in human- and in machine-readable form."@en ;
+      rdfs:comment "The MAT-label comprises data in human- and in machine-readable form."@en ;
 .
 
 mat-lbl:hasMatLabel
@@ -81,18 +81,18 @@ mat-lbl:hasMatLabel
       rdfs:range mat-lbl:MatLabel ;
 .
 
-## ??
+# ??
 mat-lbl:MatLabelDataField
       rdf:type owl:Class ;
       rdfs:label "MatLabelDataField"@en ;
       rdfs:comment "Data fields have to be approved by the customer plant."@en ;
 .
 
-## ??
+# ??
 mat-lbl:hasDataField
       rdf:type owl:ObjectProperty ;
       rdfs:label "hasDataField"@en ;
-      rdfs:comment "A MAT label comprises a set of mandatory data fields."@en ;
+      rdfs:comment "A MAT-label comprises a set of mandatory data fields."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ;
 .
@@ -387,6 +387,24 @@ mat-lbl:isPhysicalLabelOf
       rdfs:comment "The set of data fields printed on the pyhsical label."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range mat-lbl:MatLabel ;
+.
+
+# A string for a description by the customer.
+mat-lbl:hasSize
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "hasSize"@en ;
+      rdfs:comment "The size of the MAT-Label can be chosen by the supplier considering the size of the smallest package unit."@en ;
+      rdfs:domain mat-lbl:PhysicalLabel ;
+      rdfs:range xsd:string ;  
+.
+
+# A string for a description by the customer.
+mat-lbl:hasLayout
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "hasLayout"@en ;
+      rdfs:comment "To ensure to have enough free space for the code, its quiet zone and for the plain text, create a layout with maximum filled data fields."@en ;
+      rdfs:domain mat-lbl:PhysicalLabel ;
+      rdfs:range xsd:string ;  
 .
 
 mat-lbl:Adhesive
