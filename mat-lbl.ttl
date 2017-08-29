@@ -142,6 +142,14 @@ mat-lbl:hasCustomer
 
 ################ Data fields
 
+mat-lbl:hasDataIdentifier
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "has Data Identifier"@en ;
+      rdfs:comment "..."@en ;
+      rdfs:domain mat-lbl:hasDataField ;
+      rdfs:range xsd:string ; 
+.
+
 mat-lbl:hasLabelVersion
       rdf:type owl:DatatypeProperty ;
       rdfs:subPropertyOf mat-lbl:hasDataField ;
@@ -149,7 +157,7 @@ mat-lbl:hasLabelVersion
       rdfs:comment "The revision level is a fixed entry and serves the recognition of the label or its version"@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "12S" ; 
+      mat-lbl:hasDataIdentifier "12S" ; 
 .
 
 mat-lbl:hasCustomerPartNumber
@@ -159,7 +167,7 @@ mat-lbl:hasCustomerPartNumber
       rdfs:comment "Part number of the customer."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "P" ; 
+      mat-lbl:hasDataIdentifier "P" ; 
 .
 
 mat-lbl:hasManufacturerPartNumber 
@@ -170,7 +178,7 @@ mat-lbl:hasManufacturerPartNumber
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
       skos:example "SL105C103MAA-S" ;
-      mat-lbl:DataIdentifier "1P" ; 
+      mat-lbl:hasDataIdentifier "1P" ; 
 .
 
 mat-lbl:hasOrderingCode 
@@ -180,7 +188,7 @@ mat-lbl:hasOrderingCode
       rdfs:comment "Code for the part which non-ambigously can be used for ordering it. Compared to the Manufacturer Part number, the Ordering Code may obtain more information, e.g. Software Version in case of Microcontrollers or package form."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "31P" ; 
+      mat-lbl:hasDataIdentifier "31P" ; 
 .
 
 mat-lbl:hasPartDescription 
@@ -199,7 +207,7 @@ mat-lbl:hasManufacturerNumber
       rdfs:comment "Explicit identification for the manufacturer, e.g. DUNS-Nr. or mutual agreed manufacturer number."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "12V" ; 
+      mat-lbl:hasDataIdentifier "12V" ; 
 .
 
 mat-lbl:hasManufacturerLocation 
@@ -210,7 +218,7 @@ mat-lbl:hasManufacturerLocation
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
       skos:example "DEU-BERLIN - In case of only one location in town; DEU-BERLIN1, DEU-BERLIN2  - In case of two location in town" @en;
-      mat-lbl:MataIdentifier "10V" ; 
+      mat-lbl:hasDataIdentifier "10V" ; 
 .
 
 mat-lbl:hasRevisionLevel 
@@ -220,7 +228,7 @@ mat-lbl:hasRevisionLevel
       rdfs:comment "Revision status of the part."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "2P" ; 
+      mat-lbl:hasDataIdentifier "2P" ; 
 .
 
 mat-lbl:hasAdditionalPartInformation 
@@ -230,7 +238,7 @@ mat-lbl:hasAdditionalPartInformation
       rdfs:comment "Used differently for each plan, flexible filled, e.g. brightness of the LEDs."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "20P" ; 
+      mat-lbl:hasDataIdentifier "20P" ; 
 .
 
 mat-lbl:hasManufacturingDate 
@@ -240,7 +248,7 @@ mat-lbl:hasManufacturingDate
       rdfs:comment "Date of manufacturing is related to the last manufacturing process."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "6D" ; 
+      mat-lbl:hasDataIdentifier "6D" ; 
 .
 
 mat-lbl:hasExpirationDate 
@@ -250,7 +258,7 @@ mat-lbl:hasExpirationDate
       rdfs:comment "The Expiration Date of the part (defined by the manufacturer, depending on the production date)."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "14D" ; 
+      mat-lbl:hasDataIdentifier "14D" ; 
 .
 
 mat-lbl:hasRohs 
@@ -260,7 +268,7 @@ mat-lbl:hasRohs
       rdfs:comment "Indicator for RoHS (restriction of the use of certain hazardous substances in electrical and electronic equipment) compliance. N: no RoHS, Y: RoHS, 0: not acceptable."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "30P" ; 
+      mat-lbl:hasDataIdentifier "30P" ; 
 .
 
 mat-lbl:hasMSLevel 
@@ -270,7 +278,7 @@ mat-lbl:hasMSLevel
       rdfs:comment "Moisture Sensivity Lebel according to IPC/JEDEC J-STD-020."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "Z" ; 
+      mat-lbl:hasDataIdentifier "Z" ; 
 .
 
 mat-lbl:hasPurchaseOrder 
@@ -280,7 +288,7 @@ mat-lbl:hasPurchaseOrder
       rdfs:comment "Order number assigned by customer to identify a purchasing transaction."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "K" ; 
+      mat-lbl:hasDataIdentifier "K" ; 
 .
 
 mat-lbl:hasShippingNoteNumber 
@@ -290,7 +298,7 @@ mat-lbl:hasShippingNoteNumber
       rdfs:comment "Shipping Note Number of the shipping note and MAT-Label must be the same."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ; 
-      mat-lbl:DataIdentifier "16K" ; 
+      mat-lbl:hasDataIdentifier "16K" ; 
 .
 
 mat-lbl:hasSupplierName 
@@ -309,7 +317,7 @@ mat-lbl:hasSupplierId
       rdfs:comment "The vendor number (of the customer) for the supplier. It has to be taken over from the order.."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ;  
-      mat-lbl:DataIdentifier "V" ; 
+      mat-lbl:hasDataIdentifier "V" ; 
 .
 
 mat-lbl:hasPackageId 
@@ -319,7 +327,7 @@ mat-lbl:hasPackageId
       rdfs:comment "The explicit, unique number per single package. It has to be unique per supplier-id (vendor number) and package. It is always related to the smallest package unit. If possible, chronologically related to the production process (e.g. reel-ID)."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ;  
-      mat-lbl:DataIdentifier "3S" ; 
+      mat-lbl:hasDataIdentifier "3S" ; 
 .
 
 mat-lbl:hasQuantity 
@@ -329,7 +337,7 @@ mat-lbl:hasQuantity
       rdfs:comment "Quantity of the smallest package unit"@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ;  
-      mat-lbl:DataIdentifier "Q" ; 
+      mat-lbl:hasDataIdentifier "Q" ; 
 .
 
 mat-lbl:hasBatchCounter 
@@ -339,7 +347,7 @@ mat-lbl:hasBatchCounter
       rdfs:comment "Batch Counter identifies the number of batches (1 or max. 2 batches per reel possible)."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ;  
-      mat-lbl:DataIdentifier "20T" ; 
+      mat-lbl:hasDataIdentifier "20T" ; 
 .
 
 mat-lbl:hasFirstBatchNumber 
@@ -349,7 +357,7 @@ mat-lbl:hasFirstBatchNumber
       rdfs:comment "With this number the supplier has to be able to retroactively provide information about the batch (e.g. volume, production, delivery) A batch identification should be based on same manufacturing conditions. If a manufacturing condition changes, the batch number should be changed, too."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ;  
-      mat-lbl:DataIdentifier "1T" ; 
+      mat-lbl:hasDataIdentifier "1T" ; 
 .
 
 mat-lbl:hasSecondBatchNumber 
@@ -359,7 +367,7 @@ mat-lbl:hasSecondBatchNumber
       rdfs:comment "Batch number for the second batch - if applicable."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ;  
-      mat-lbl:DataIdentifier "2T" ; 
+      mat-lbl:hasDataIdentifier "2T" ; 
 .
 
 mat-lbl:hasSupplierData 
@@ -369,7 +377,7 @@ mat-lbl:hasSupplierData
       rdfs:comment "Supplier own information that may be used by the supplier."@en ;
       rdfs:domain mat-lbl:MatLabel ;
       rdfs:range xsd:string ;  
-      mat-lbl:DataIdentifier "1Z" ; 
+      mat-lbl:hasDataIdentifier "1Z" ; 
 .
 
 ################ Physical aspects
