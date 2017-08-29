@@ -108,7 +108,7 @@ mat-lbl:hasManufacturer
       rdf:type owl:ObjectProperty ;
       rdfs:label "has Manufacturer"@en ;
       rdfs:comment "A company that produces goods in large numbers."@en ;
-      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:domain mat-lbl:MatLabel ;
       rdfs:range mat-lbl:Manufacturer ;
 .
 
@@ -122,7 +122,7 @@ mat-lbl:hasSupplier
       rdf:type owl:ObjectProperty ;
       rdfs:label "has Supplier"@en ;
       rdfs:comment "A company that delivers parts to customers."@en ;
-      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:domain mat-lbl:MatLabel ;
       rdfs:range mat-lbl:Supplier ;
 .
 
@@ -136,7 +136,7 @@ mat-lbl:hasCustomer
       rdf:type owl:ObjectProperty ;
       rdfs:label "has Customer"@en ;
       rdfs:comment "An industrial plant that orders and receives goods."@en ;
-      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:domain mat-lbl:MatLabel ;
       rdfs:range mat-lbl:Customer ;
 .
 
