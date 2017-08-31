@@ -72,6 +72,29 @@ mat-lbl:MatLabel
       rdfs:comment "The MAT-label comprises data in human- and in machine-readable form."@en ;
 .
 
+mat-lbl:MatLabelPrintable
+      rdf:type owl:Class ;
+      rdfs:subClassOf mat-lbl:MatLabel ;
+      rdfs:label "MatLabelPrintable"@en ;
+      rdfs:comment "The set of data fields included in the text on the printed label."@en ;
+.
+
+mat-lbl:MatLabelPrintable
+      rdf:type owl:Class ;
+      rdfs:subClassOf mat-lbl:MatLabel ;
+      rdfs:label "MatLabelPrintable"@en ;
+      rdfs:comment "The set of data fields included in the printed label."@en ;
+.
+
+# ??
+mat-lbl:hasPrintableDataField
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "hasPrintableDataField"@en ;
+      rdfs:comment "Not all data fields appear in the printed label."@en ;
+      rdfs:domain mat-lbl:MatLabel ;
+      rdfs:range mat-lbl:DataField ;
+.
+
 mat-lbl:hasMatLabel
       rdf:type owl:ObjectProperty ;
       rdfs:label "hasMATLabel"@en ;
@@ -92,7 +115,7 @@ mat-lbl:hasDataField
       rdfs:label "hasDataField"@en ;
       rdfs:comment "A MAT-label comprises a set of mandatory data fields."@en ;
       rdfs:domain mat-lbl:MatLabel ;
-      rdfs:range xsd:string ;
+      rdfs:range mat-lbl:DataField ;
 .
 
 # maybe dbo:Company is better 
@@ -193,7 +216,7 @@ mat-lbl:OrderingCode
 
 mat-lbl:PartDescription 
       rdf:type owl:Class ;
-      rdfs:subClassOf mat-lbl:DataField ;
+#      rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "PartDescription"@en ;
       rdfs:comment "Clear-text description of the part (or part name), so that persons who are not familiar with the manufacturer's naming convention can understand what kind of component this is."@en ;
 .
