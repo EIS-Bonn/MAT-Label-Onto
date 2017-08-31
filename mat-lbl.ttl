@@ -415,6 +415,16 @@ mat-lbl:Adhesive
       owl:oneOf (mat-lbl:permanent mat-lbl:removable) ;
 .
 
+mat-lbl:permanent rdf:type owl:NamedIndividual ; 
+      rdfs:label "permanent"@en ;
+      rdfs:comment "Long lasting material used for the back of physical labels."@en ;
+.
+
+mat-lbl:removable rdf:type owl:NamedIndividual ; 
+     rdfs:label "removable"@en ;
+     rdfs:comment "Residue-free material used for the back of physical labels."@en ;
+.
+
 mat-lbl:hasAdhesive
       rdf:type owl:ObjectProperty ;
       rdfs:label "hasAdhesive"@en ;
@@ -444,6 +454,21 @@ mat-lbl:FaceMaterial
       rdfs:label "FaceMaterial"@en ;
       rdfs:comment "Applies to physical labels."@en ;
       owl:oneOf (mat-lbl:white mat-lbl:reversecoated mat-lbl:mat) ;
+.
+
+mat-lbl:white rdf:type owl:NamedIndividual ; 
+      rdfs:label "white"@en ;
+      rdfs:comment "White material used for the front of physical labels."@en ;
+.
+
+mat-lbl:reversecoated rdf:type owl:NamedIndividual ; 
+      rdfs:label "reversecoated"@en ;
+      rdfs:comment "Reverse coated material used for the front of physical labels."@en ;
+.
+
+mat-lbl:mat rdf:type owl:NamedIndividual ; 
+      rdfs:label "mat"@en ;
+      rdfs:comment "Mat material used for the front of physical labels."@en ;
 .
 
 mat-lbl:hasFaceMaterial
