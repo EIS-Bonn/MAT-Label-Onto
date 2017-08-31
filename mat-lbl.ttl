@@ -72,29 +72,6 @@ mat-lbl:MatLabel
       rdfs:comment "A unique material label on the smallest package unit containing a clearly defined set of traceability information in human- and in machine-readable form."@en ;
 .
 
-mat-lbl:MatLabelPrintable
-      rdf:type owl:Class ;
-      rdfs:subClassOf mat-lbl:MatLabel ;
-      rdfs:label "MatLabelPrintable"@en ;
-      rdfs:comment "The set of data fields included in the text on the printed label."@en ;
-.
-
-mat-lbl:MatLabelPrintable
-      rdf:type owl:Class ;
-      rdfs:subClassOf mat-lbl:MatLabel ;
-      rdfs:label "MatLabelPrintable"@en ;
-      rdfs:comment "The set of data fields included in the printed label."@en ;
-.
-
-# ??
-mat-lbl:hasPrintableDataField
-      rdf:type owl:ObjectProperty ;
-      rdfs:label "hasPrintableDataField"@en ;
-      rdfs:comment "Not all data fields appear in the printed label."@en ;
-      rdfs:domain mat-lbl:MatLabel ;
-      rdfs:range mat-lbl:DataField ;
-.
-
 mat-lbl:hasMatLabel
       rdf:type owl:ObjectProperty ;
       rdfs:label "hasMATLabel"@en ;
@@ -103,13 +80,12 @@ mat-lbl:hasMatLabel
       rdfs:range mat-lbl:MatLabel ;
 .
 
-mat-lbl:MatLabelDataField
+mat-lbl:DataField
       rdf:type owl:Class ;
-      rdfs:label "MATLabelDataField"@en ;
-      rdfs:comment "Data fields have to be approved by the customer plant."@en ;
+      rdfs:label "DataField"@en ;
+      rdfs:comment "The Data Matrix Code on the MAT-Label has to contain all data fields including its data identifier in the order represented by the column number."@en ;
 .
 
-# ??
 mat-lbl:hasDataField
       rdf:type owl:ObjectProperty ;
       rdfs:label "hasDataField"@en ;
@@ -179,8 +155,6 @@ mat-lbl:hasDataIdentifier
       rdfs:range xsd:string ; 
 .
 
-# ToDo: Add property "has Length" (and optionally "hasFormat"), see page 10
-
 mat-lbl:LabelVersion
       rdf:type owl:Class ;
       rdfs:subClassOf mat-lbl:DataField ;
@@ -214,9 +188,11 @@ mat-lbl:OrderingCode
       mat-lbl:hasDataIdentifier "31P" ; 
 .
 
+# PartDescription is no DataField and is not contained in the Data Matrix Code! However, it is contained in the printed label.
 mat-lbl:PartDescription 
       rdf:type owl:Class ;
 #      rdfs:subClassOf mat-lbl:DataField ;
+      rdfs:subClassOf mat-lbl:PrintedEntry ;
       rdfs:label "PartDescription"@en ;
       rdfs:comment "Clear-text description of the part (or part name), so that persons who are not familiar with the manufacturer's naming convention can understand what kind of component this is."@en ;
 .
@@ -365,6 +341,39 @@ mat-lbl:SupplierData
       mat-lbl:hasDataIdentifier "1Z" ; 
 .
 
+################ Printed label
+
+mat-lbl:PrintedEntry 
+      rdf:type owl:Class ;
+      rdfs:label "PrintedEntry"@en ;
+      rdfs:comment "..."@en ;
+.
+
+mat-lbl:hasExactLength
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "hasExactLength"@en ;
+      rdfs:comment "..."@en ;
+      rdfs:domain mat-lbl:PrintedEntry ;
+      rdfs:range xsd:int ;
+.
+
+mat-lbl:hasMaximalLength
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "hasMaximalLength"@en ;
+      rdfs:comment "..."@en ;
+      rdfs:domain mat-lbl:PrintedEntry ;
+      rdfs:range xsd:int ;
+.
+
+# A string for a description.
+mat-lbl:hasFormat
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "hasFormat"@en ;
+      rdfs:comment "..."@en ;
+      rdfs:domain mat-lbl:PrintedEntry ;
+      rdfs:range xsd:string ;
+.
+
 ################ Physical aspects
 
 mat-lbl:PhysicalLabel
@@ -375,13 +384,13 @@ mat-lbl:PhysicalLabel
 
 mat-lbl:isPhysicalLabelOf
       rdf:type owl:ObjectProperty ;
-      rdfs:label "isPhysicalLabel of"@en ;
+      rdfs:label "isPhysicalLabelOf"@en ;
       rdfs:comment "The set of data fields printed on the physical label."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range mat-lbl:MatLabel ;
 .
 
-# A string for a description by the customer.
+# A string for a description.
 mat-lbl:hasSize
       rdf:type owl:DatatypeProperty ;
       rdfs:label "hasSize"@en ;
@@ -390,7 +399,7 @@ mat-lbl:hasSize
       rdfs:range xsd:string ;  
 .
 
-# A string for a description by the customer.
+# A string for a description.
 mat-lbl:hasLayout
       rdf:type owl:DatatypeProperty ;
       rdfs:label "hasLayout"@en ;
