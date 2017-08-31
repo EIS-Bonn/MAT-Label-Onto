@@ -69,7 +69,7 @@ mat-lbl:PartPackaging
 mat-lbl:MatLabel
       rdf:type owl:Class ;
       rdfs:label "MATLabel"@en ;
-      rdfs:comment "The MAT-label comprises data in human- and in machine-readable form."@en ;
+      rdfs:comment "A unique material label on the smallest package unit containing a clearly defined set of traceability information in human- and in machine-readable form."@en ;
 .
 
 mat-lbl:MatLabelPrintable
