@@ -148,20 +148,20 @@ mat-lbl:hasDataContent
       rdfs:range xsd:string ; 
 .
 
-mat-lbl:hasDataIdentifier
-      rdf:type owl:DatatypeProperty ;
-      rdfs:label "hasDataIdentifier"@en ;
-      rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data."@en ;
-      rdfs:domain mat-lbl:DataField ;
-      rdfs:range xsd:string ; 
-.
+#mat-lbl:hasDataIdentifier
+#      rdf:type owl:DatatypeProperty ;
+#      rdfs:label "hasDataIdentifier"@en ;
+#      rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data."@en ;
+#      rdfs:domain mat-lbl:DataField ;
+#      rdfs:range xsd:string ; 
+#.
 
 mat-lbl:LabelVersion
       rdf:type owl:Class ;
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "LabelVersion"@en ;
       rdfs:comment "The revision level is a fixed entry and serves the recognition of the label or its version"@en ;
-      mat-lbl:hasDataIdentifier "12S" ; 
+      skos:notation "12S" ; 
 .
 
 mat-lbl:CustomerPartNumber
@@ -169,7 +169,7 @@ mat-lbl:CustomerPartNumber
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "CustomerPartNumber"@en ;
       rdfs:comment "Part number of the customer."@en ;
-      mat-lbl:hasDataIdentifier "P" ; 
+      skos:notation "P" ; 
 .
 
 mat-lbl:ManufacturerPartNumber 
@@ -178,7 +178,7 @@ mat-lbl:ManufacturerPartNumber
       rdfs:label "ManufacturerPartNumber"@en ;
       rdfs:comment "Internal manufacturer part number."@en ;
       skos:example "SL105C103MAA-S" ;
-      mat-lbl:hasDataIdentifier "1P" ; 
+      skos:notation "1P" ; 
 .
 
 mat-lbl:OrderingCode 
@@ -186,7 +186,7 @@ mat-lbl:OrderingCode
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "OrderingCode"@en ;
       rdfs:comment "Code for the part which non-ambigously can be used for ordering it. Compared to the Manufacturer Part number, the Ordering Code may obtain more information, e.g. Software Version in case of Microcontrollers or package form."@en ;
-      mat-lbl:hasDataIdentifier "31P" ; 
+      skos:notation "31P" ; 
 .
 
 # PartDescription is no DataField and is not contained in the Data Matrix Code! However, it is contained in the printed label.
@@ -203,7 +203,7 @@ mat-lbl:ManufacturerNumber
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "ManufacturerNumber"@en ;
       rdfs:comment "Explicit identification for the manufacturer, e.g. DUNS-Nr. or mutual agreed manufacturer number."@en ;
-      mat-lbl:hasDataIdentifier "12V" ; 
+      skos:notation "12V" ; 
 .
 
 mat-lbl:ManufacturerLocation 
@@ -212,7 +212,7 @@ mat-lbl:ManufacturerLocation
       rdfs:label "ManufacturerLocation"@en ;
       rdfs:comment "Naming of the manufacturing location / locations."@en ;
       skos:example "DEU-BERLIN - In case of only one location in town; DEU-BERLIN1, DEU-BERLIN2  - In case of two location in town" @en;
-      mat-lbl:hasDataIdentifier "10V" ; 
+      skos:notation "10V" ; 
 .
 
 mat-lbl:RevisionLevel 
@@ -220,7 +220,7 @@ mat-lbl:RevisionLevel
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "RevisionLevel"@en ;
       rdfs:comment "Revision status of the part."@en ;
-      mat-lbl:hasDataIdentifier "2P" ; 
+      skos:notation "2P" ; 
 .
 
 mat-lbl:AdditionalPartInformation 
@@ -228,7 +228,7 @@ mat-lbl:AdditionalPartInformation
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "AdditionalPartNumber"@en ;
       rdfs:comment "Used differently for each plan, flexible filled, e.g. brightness of the LEDs."@en ;
-      mat-lbl:hasDataIdentifier "20P" ; 
+      skos:notation "20P" ; 
 .
 
 mat-lbl:ManufacturingDate 
@@ -236,7 +236,7 @@ mat-lbl:ManufacturingDate
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "ManufacturingDate"@en ;
       rdfs:comment "Date of manufacturing is related to the last manufacturing process."@en ;
-      mat-lbl:hasDataIdentifier "6D" ; 
+      skos:notation "6D" ; 
 .
 
 mat-lbl:ExpirationDate 
@@ -244,7 +244,7 @@ mat-lbl:ExpirationDate
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "ExpirationDate"@en ;
       rdfs:comment "The Expiration Date of the part (defined by the manufacturer, depending on the production date)."@en ;
-      mat-lbl:hasDataIdentifier "14D" ; 
+      skos:notation "14D" ; 
 .
 
 mat-lbl:Rohs 
@@ -252,7 +252,7 @@ mat-lbl:Rohs
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "RoHS"@en ;
       rdfs:comment "Indicator for RoHS (restriction of the use of certain hazardous substances in electrical and electronic equipment) compliance. N: no RoHS, Y: RoHS, 0: not acceptable."@en ;
-      mat-lbl:hasDataIdentifier "30P" ; 
+      skos:notation "30P" ; 
 .
 
 mat-lbl:MSLevel 
@@ -260,7 +260,7 @@ mat-lbl:MSLevel
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "MSlevel"@en ;
       rdfs:comment "Moisture Sensivity Lebel according to IPC/JEDEC J-STD-020."@en ;
-      mat-lbl:hasDataIdentifier "Z" ; 
+      skos:notation "Z" ; 
 .
 
 mat-lbl:PurchaseOrderNumber
@@ -268,7 +268,7 @@ mat-lbl:PurchaseOrderNumber
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "PurchaseOrderNumber"@en ;
       rdfs:comment "Order number assigned by customer to identify a purchasing transaction."@en ;
-      mat-lbl:hasDataIdentifier "K" ; 
+      skos:notation "K" ; 
 .
 
 mat-lbl:ShippingNoteNumber 
@@ -276,7 +276,7 @@ mat-lbl:ShippingNoteNumber
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "ShippingNoteNumber"@en ;
       rdfs:comment "Shipping Note Number of the shipping note and MAT-Label must be the same."@en ;
-      mat-lbl:hasDataIdentifier "16K" ; 
+      skos:notation "16K" ; 
 .
 
 mat-lbl:SupplierName 
@@ -291,7 +291,7 @@ mat-lbl:SupplierId
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "SupplierID"@en ;
       rdfs:comment "The vendor number (of the customer) for the supplier. It has to be taken over from the order.."@en ;
-      mat-lbl:hasDataIdentifier "V" ; 
+      skos:notation "V" ; 
 .
 
 mat-lbl:PackageId 
@@ -299,7 +299,7 @@ mat-lbl:PackageId
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "PackageID"@en ;
       rdfs:comment "The explicit, unique number per single package. It has to be unique per supplier-id (vendor number) and package. It is always related to the smallest package unit. If possible, chronologically related to the production process (e.g. reel-ID)."@en ;
-      mat-lbl:hasDataIdentifier "3S" ; 
+      skos:notation "3S" ; 
 .
 
 mat-lbl:Quantity 
@@ -307,7 +307,7 @@ mat-lbl:Quantity
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "Quantity"@en ;
       rdfs:comment "Quantity of the smallest package unit"@en ;
-      mat-lbl:hasDataIdentifier "Q" ; 
+      skos:notation "Q" ; 
 .
 
 mat-lbl:BatchCounter 
@@ -315,7 +315,7 @@ mat-lbl:BatchCounter
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "BatchCounter"@en ;
       rdfs:comment "Batch Counter identifies the number of batches (1 or max. 2 batches per reel possible)."@en ;
-      mat-lbl:hasDataIdentifier "20T" ; 
+      skos:notation "20T" ; 
 .
 
 mat-lbl:FirstBatchNumber 
@@ -323,7 +323,7 @@ mat-lbl:FirstBatchNumber
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "FirstBatchNumber"@en ;
       rdfs:comment "With this number the supplier has to be able to retroactively provide information about the batch (e.g. volume, production, delivery) A batch identification should be based on same manufacturing conditions. If a manufacturing condition changes, the batch number should be changed, too."@en ;
-      mat-lbl:hasDataIdentifier "1T" ; 
+      skos:notation "1T" ; 
 .
 
 mat-lbl:SecondBatchNumber 
@@ -331,7 +331,7 @@ mat-lbl:SecondBatchNumber
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "SecondBatchNumber"@en ;
       rdfs:comment "Batch number for the second batch - if applicable."@en ;
-      mat-lbl:hasDataIdentifier "2T" ; 
+      skos:notation "2T" ; 
 .
 
 mat-lbl:SupplierData 
@@ -339,7 +339,7 @@ mat-lbl:SupplierData
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "SupplierData"@en ;
       rdfs:comment "Supplier own information that may be used by the supplier."@en ;
-      mat-lbl:hasDataIdentifier "1Z" ; 
+      skos:notation "1Z" ; 
 .
 
 ################ Printed label
