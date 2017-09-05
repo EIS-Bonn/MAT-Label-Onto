@@ -382,12 +382,12 @@ mat-lbl:PhysicalLabel
       rdfs:comment "Recycling regulations have to be obeyed."@en ;
 .
 
-mat-lbl:isPhysicalLabelOf
+mat-lbl:hasPhysicalLabel
       rdf:type owl:ObjectProperty ;
-      rdfs:label "isPhysicalLabelOf"@en ;
+      rdfs:label "hasPhysicalLabel"@en ;
       rdfs:comment "The set of data fields printed on the physical label."@en ;
-      rdfs:domain mat-lbl:PhysicalLabel ;
-      rdfs:range mat-lbl:MatLabel ;
+      rdfs:domain mat-lbl:MatLabel ;
+      rdfs:range mat-lbl:PhysicalLabel ;
 .
 
 mat-lbl:hasPrintedEntry
