@@ -345,6 +345,7 @@ mat-lbl:SupplierData
 
 mat-lbl:PrintedEntry 
       rdf:type owl:Class ;
+      dbo:isPartOf mat-lbl:PrintedEntry ;
       rdfs:label "PrintedEntry"@en ;
       rdfs:comment "..."@en ;
 .
