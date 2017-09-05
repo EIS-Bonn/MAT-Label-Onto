@@ -345,7 +345,6 @@ mat-lbl:SupplierData
 
 mat-lbl:PrintedEntry 
       rdf:type owl:Class ;
-      dbo:isPartOf mat-lbl:PhysicalLabel ;
       rdfs:label "PrintedEntry"@en ;
       rdfs:comment "..."@en ;
 .
@@ -389,6 +388,14 @@ mat-lbl:isPhysicalLabelOf
       rdfs:comment "The set of data fields printed on the physical label."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range mat-lbl:MatLabel ;
+.
+
+mat-lbl:hasPrintedEntry
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "hasPrintedEntry"@en ;
+      rdfs:comment "Not all data fields have to be printed if the label is small."@en ;
+      rdfs:domain mat-lbl:PhysicalLabel ;
+      rdfs:range mat-lbl:PrintedEntry ;
 .
 
 # A string for a description.
