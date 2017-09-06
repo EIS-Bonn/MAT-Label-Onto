@@ -288,9 +288,11 @@ mat-lbl:ShippingNoteNumber
       skos:notation "16K"^^mat-lbl:DataID ; 
 .
 
+# SupplierName is no DataField and is not contained in the Data Matrix Code! However, it is contained in the printed label.
 mat-lbl:SupplierName 
       rdf:type owl:Class ;
-      rdfs:subClassOf mat-lbl:DataField ;
+#      rdfs:subClassOf mat-lbl:DataField ;
+      rdfs:subClassOf mat-lbl:PrintedEntry ;
       rdfs:label "SupplierName"@en ;
       rdfs:comment "Name of the Supplier."@en ;
 .
@@ -506,4 +508,114 @@ mat-lbl:hasFaceMaterial
       rdfs:comment "Material for the face of physical labels."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range mat-lbl:FaceMaterial ; 
+.
+
+################ Instances
+
+mat-lbl:matLabelA rdf:type mat-lbl:MatLabel ;
+      mat-lbl:hasDataField mat-lbl:a12s ;
+      mat-lbl:hasDataField mat-lbl:ap ;
+      mat-lbl:hasDataField mat-lbl:a1p ;
+      mat-lbl:hasDataField mat-lbl:a31p ;
+      mat-lbl:hasDataField mat-lbl:a12v ;
+      mat-lbl:hasDataField mat-lbl:a10v ;
+      mat-lbl:hasDataField mat-lbl:a2p ;
+      mat-lbl:hasDataField mat-lbl:a20p ;
+      mat-lbl:hasDataField mat-lbl:a6d ;
+      mat-lbl:hasDataField mat-lbl:a14d ;
+      mat-lbl:hasDataField mat-lbl:a30p ;
+      mat-lbl:hasDataField mat-lbl:az ;
+      mat-lbl:hasDataField mat-lbl:ak ;
+      mat-lbl:hasDataField mat-lbl:a16k ;
+      mat-lbl:hasDataField mat-lbl:av ;
+      mat-lbl:hasDataField mat-lbl:a3s ;
+      mat-lbl:hasDataField mat-lbl:aq ;
+      mat-lbl:hasDataField mat-lbl:a20t ;
+      mat-lbl:hasDataField mat-lbl:a1t ;
+      mat-lbl:hasDataField mat-lbl:a2t ;
+      mat-lbl:hasDataField mat-lbl:a1z ;
+.
+
+mat-lbl:a12s rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "0002" ;
+.
+
+mat-lbl:ap rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "718.187-04 A2C5321641900" ;
+.
+
+mat-lbl:a1p rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "SL105C103MAA-S" ;
+.
+
+mat-lbl:a31p rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "SC441427CFNR2 A2C53216419/02" ;
+.
+
+mat-lbl:a12v rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "123456789" ;
+.
+
+mat-lbl:a10v rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "DEU-BERLIN CHN-BEIJING" ;
+.
+
+mat-lbl:a2p rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "AA 01" ;
+.
+
+mat-lbl:a20p rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "20 lumens" ;
+.
+
+mat-lbl:a6d rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "20080330" ;
+.
+
+mat-lbl:a14d rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "20081031" ;
+.
+
+mat-lbl:a30p rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "Y" ;
+.
+
+mat-lbl:az rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "5" ;
+.
+
+mat-lbl:ak rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "753013" ;
+.
+
+mat-lbl:a16k rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "54003333" ;
+.
+
+mat-lbl:av rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "884566" ;
+.
+
+mat-lbl:a3s rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "S123456789012" ;
+.
+
+mat-lbl:aq rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "1000NAR000" ;
+.
+
+mat-lbl:a20t rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "2" ;
+.
+
+mat-lbl:a1t rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "750160429" ;
+.
+
+mat-lbl:a2t rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "750160430" ;
+.
+
+mat-lbl:a1z rdf:type mat-lbl:DataField ;
+      mat-lbl:hasDataContent "Special delivery" ;
 .
