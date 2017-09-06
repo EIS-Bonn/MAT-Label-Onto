@@ -170,7 +170,7 @@ mat-lbl:LabelVersion
       rdfs:label "LabelVersion"@en ;
       rdfs:comment "The revision level is a fixed entry and serves the recognition of the label or its version"@en ;
 #      skos:notation "12S"^^mat-lbl:DataID ; 
-      mat-lbl:hasDataID "12S" ;
+      mat-lbl:hasDataID "12S"^^mat-lbl:DataID ;
 .
 
 mat-lbl:CustomerPartNumber
