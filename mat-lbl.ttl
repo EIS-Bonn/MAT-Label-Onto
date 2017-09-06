@@ -468,6 +468,9 @@ mat-lbl:PeelableLabel
       rdfs:comment "With removable adhesive adjusted to the material of the smallest package unit, residue free."@en ;
 .
 
+_:x rdf:type owl:AllDisjointClasses ;
+      owl:members ( mat-lbl:NonremovableLabel mat-lbl:PeelableLabel ) .
+
 mat-lbl:FaceMaterial
       rdf:type owl:Class ;
       rdfs:label "FaceMaterial"@en ;
