@@ -156,12 +156,21 @@ mat-lbl:DataID rdf:type rdfs:Datatype ;
 			   owl:withRestrictions ([xsd:pattern "([1-9]([0-9])?)?[A-Z]"])]
 .
 
+mat-lbl:hasDataID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:label "hasDataID"@en ;
+      rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data." ;
+      rdfs:domain mat-lbl:DataField ;
+      rdfs:range mat-lbl:DataID ; 
+.
+
 mat-lbl:LabelVersion
       rdf:type owl:Class ;
       rdfs:subClassOf mat-lbl:DataField ;
       rdfs:label "LabelVersion"@en ;
       rdfs:comment "The revision level is a fixed entry and serves the recognition of the label or its version"@en ;
-      skos:notation "12S"^^mat-lbl:DataID ; 
+#      skos:notation "12S"^^mat-lbl:DataID ; 
+      mat-lbl:hasDataID "12S" ;
 .
 
 mat-lbl:CustomerPartNumber
