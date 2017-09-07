@@ -96,20 +96,20 @@ mat-lbl:hasDataField
       rdfs:range mat-lbl:DataField ;
 .
 
-#mat-lbl:Manufacturer
-#      rdf:type owl:Class;
-#      rdfs:subClassOf dbo:Company ;
-#      rdfs:label "Manufacturer"@en;
-#      rdfs:comment "A company that produces goods in large numbers."@en;
-#.
-#
-#mat-lbl:hasManufacturer
-#      rdf:type owl:ObjectProperty ;
-#      rdfs:label "hasManufacturer"@en ;
-#      rdfs:comment "A company that produces goods in large numbers."@en ;
-#      rdfs:domain mat-lbl:PartPackaging ;
-#      rdfs:range mat-lbl:Manufacturer ;
-#.
+mat-lbl:Manufacturer
+      rdf:type owl:Class;
+      rdfs:subClassOf dbo:Company ;
+      rdfs:label "Manufacturer"@en;
+      rdfs:comment "A company that produces goods in large numbers."@en;
+.
+
+mat-lbl:hasManufacturer
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "hasManufacturer"@en ;
+      rdfs:comment "A company that produces goods in large numbers."@en ;
+      rdfs:domain mat-lbl:PartPackaging ;
+      rdfs:range mat-lbl:Manufacturer ;
+.
 
 mat-lbl:Supplier
       rdf:type owl:Class;
@@ -559,90 +559,90 @@ mat-lbl:matLabelA rdf:type mat-lbl:MatLabel ;
       mat-lbl:hasDataField mat-lbl:a1z ;
 .
 
-mat-lbl:a12s rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "0002" ;
-.
+#mat-lbl:a12s rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "0002" ;
+#.
+#
+#mat-lbl:ap rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "718.187-04 A2C5321641900" ;
+#.
+#
+#mat-lbl:a1p rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "SL105C103MAA-S" ;
+#.
+#
+#mat-lbl:a31p rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "SC441427CFNR2 A2C53216419/02" ;
+#.
+#
+#mat-lbl:a12v rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "123456789" ;
+#.
+#
+#mat-lbl:a10v rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "DEU-BERLIN CHN-BEIJING" ;
+#.
+#
+#mat-lbl:a2p rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "AA 01" ;
+#.
+#
+#mat-lbl:a20p rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "20 lumens" ;
+#.
+#
+#mat-lbl:a6d rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "20080330" ;
+#.
+#
+#mat-lbl:a14d rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "20081031" ;
+#.
 
-mat-lbl:ap rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "718.187-04 A2C5321641900" ;
-.
-
-mat-lbl:a1p rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "SL105C103MAA-S" ;
-.
-
-mat-lbl:a31p rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "SC441427CFNR2 A2C53216419/02" ;
-.
-
-mat-lbl:a12v rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "123456789" ;
-.
-
-mat-lbl:a10v rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "DEU-BERLIN CHN-BEIJING" ;
-.
-
-mat-lbl:a2p rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "AA 01" ;
-.
-
-mat-lbl:a20p rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "20 lumens" ;
-.
-
-mat-lbl:a6d rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "20080330" ;
-.
-
-mat-lbl:a14d rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "20081031" ;
-.
-
-mat-lbl:a30p rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "Y" ;
-.
-
-mat-lbl:az rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "5" ;
-.
-
-mat-lbl:ak rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "753013" ;
-.
-
-mat-lbl:a16k rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "54003333" ;
-.
-
-mat-lbl:av rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "884566" ;
-.
-
-mat-lbl:a3s rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "S123456789012" ;
-.
-
-mat-lbl:aq rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "1000NAR000" ;
-.
-
-mat-lbl:a20t rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "2" ;
-.
-
-mat-lbl:a1t rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "750160429" ;
-.
-
-mat-lbl:a2t rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "750160430" ;
-.
-
-mat-lbl:a1z rdf:type mat-lbl:DataField ;
-      mat-lbl:hasDataContent "Special delivery" ;
-.
-
+#mat-lbl:a30p rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "Y" ;
+#.
+#
+#mat-lbl:az rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "5" ;
+#.
+#
+#mat-lbl:ak rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "753013" ;
+#.
+#
+#mat-lbl:a16k rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "54003333" ;
+#.
+#
+#mat-lbl:av rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "884566" ;
+#.
+#
+#mat-lbl:a3s rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "S123456789012" ;
+#.
+#
+#mat-lbl:aq rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "1000NAR000" ;
+#.
+#
+#mat-lbl:a20t rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "2" ;
+#.
+#
+#mat-lbl:a1t rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "750160429" ;
+#.
+#
+#mat-lbl:a2t rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "750160430" ;
+#.
+#
+#mat-lbl:a1z rdf:type mat-lbl:DataField ;
+#      mat-lbl:hasDataContent "Special delivery" ;
+#.
+#
 
 # TEST DATA
 
