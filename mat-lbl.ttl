@@ -161,7 +161,7 @@ mat-lbl:labelVersion
       rdfs:label "LabelVersion"@en ;
       rdfs:comment "The revision level is a fixed entry and serves the recognition of the label or its version"@en ;
       skos:notation "12S"^^mat-lbl:DataID ; 
-#      mat-lbl:hasDataID "12S"^^mat-lbl:DataID ;
+      skos:example "0002" ;
 .
 
 mat-lbl:customerPartNumber
@@ -171,6 +171,7 @@ mat-lbl:customerPartNumber
       rdfs:label "CustomerPartNumber"@en ;
       rdfs:comment "Part number of the customer."@en ;
       skos:notation "P"^^mat-lbl:DataID ; 
+      skos:example "A2C5321641900" ;
 .
 
 mat-lbl:manufacturerPartNumber 
@@ -199,6 +200,7 @@ mat-lbl:partDescription
       rdfs:range xsd:string ; 
       rdfs:subClassOf mat-lbl:PrintedEntry ;
       rdfs:label "PartDescription"@en ;
+      skos:example "10 nF / 50 V / Ker" ;
       rdfs:comment "Clear-text description of the part (or part name), so that persons who are not familiar with the manufacturer's naming convention can understand what kind of component this is."@en ;
 .
 
@@ -210,6 +212,7 @@ mat-lbl:manufacturerNumber
       rdfs:label "ManufacturerNumber"@en ;
       rdfs:comment "Explicit identification for the manufacturer, e.g. DUNS-Nr. or mutual agreed manufacturer number."@en ;
       skos:notation "12V"^^mat-lbl:DataID ; 
+      skos:example "123456789" ;
 .
 
 mat-lbl:manufacturerLocation 
@@ -231,6 +234,7 @@ mat-lbl:revisionLevel
       rdfs:label "RevisionLevel"@en ;
       rdfs:comment "Revision status of the part."@en ;
       skos:notation "2P"^^mat-lbl:DataID ; 
+      skos:example "AA" ;
 .
 
 mat-lbl:additionalPartInformation 
@@ -251,6 +255,7 @@ mat-lbl:manufacturingDate
       rdfs:label "ManufacturingDate"@en ;
       rdfs:comment "Date of manufacturing is related to the last manufacturing process."@en ;
       skos:notation "6D"^^mat-lbl:DataID ; 
+      skos:example "20080330" ;
 .
 
 mat-lbl:expirationDate 
@@ -261,7 +266,8 @@ mat-lbl:expirationDate
       rdfs:label "ExpirationDate"@en ;
       rdfs:comment "The Expiration Date of the part (defined by the manufacturer, depending on the production date)."@en ;
       skos:notation "14D"^^mat-lbl:DataID ; 
-.
+      skos:example "20081031" ;
+	.
 
 mat-lbl:rohs 
       a owl:DatatypeProperty ;
