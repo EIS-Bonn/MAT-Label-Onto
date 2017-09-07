@@ -22,6 +22,8 @@
 @prefix dul:     <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix conti:   <http://www.continental.com/vocab/products#> .
 
+################ Ontology information
+
 mat-lbl: a owl:Ontology ;
       dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Information for Purchased Production Parts" ;
       dc11:title "MAT-Label Vocabulary"@en ;
@@ -82,25 +84,25 @@ mat-lbl:hasMatLabel
       rdfs:range mat-lbl:PartPackaging ;
 .
 
-mat-lbl:DataField
-      a owl:Class ;
-      rdfs:label "DataField"@en ;
-      rdfs:comment "The Data Matrix Code on the MAT-Label has to contain all data fields including its data identifier in the order represented by the column number."@en ;
-.
+#mat-lbl:DataField
+#      a owl:Class ;
+#      rdfs:label "DataField"@en ;
+#      rdfs:comment "The Data Matrix Code on the MAT-Label has to contain all data fields including its data identifier in the order represented by the column number."@en ;
+#.
 
-mat-lbl:hasDataField
-      a owl:ObjectProperty ;
-      rdfs:label "hasDataField"@en ;
-      rdfs:comment "A MAT-label comprises a set of mandatory data fields."@en ;
-      rdfs:domain mat-lbl:PartPackaging ;
-      rdfs:range mat-lbl:DataField ;
-.
+#mat-lbl:hasDataField
+#      a owl:ObjectProperty ;
+#      rdfs:label "hasDataField"@en ;
+#      rdfs:comment "A MAT-label comprises a set of mandatory data fields."@en ;
+#      rdfs:domain mat-lbl:PartPackaging ;
+#      rdfs:range mat-lbl:DataField ;
+#.
 
 mat-lbl:Manufacturer
       a owl:Class;
       rdfs:subClassOf dbo:Company ;
-      rdfs:label "Manufacturer"@en;
-      rdfs:comment "A company that produces goods in large numbers."@en;
+      rdfs:label "Manufacturer"@en ;
+      rdfs:comment "A company that produces goods in large numbers."@en ;
 .
 
 mat-lbl:hasManufacturer
@@ -114,8 +116,8 @@ mat-lbl:hasManufacturer
 mat-lbl:Supplier
       a owl:Class;
       rdfs:subClassOf dbo:Company ;
-      rdfs:label "Supplier"@en;
-      rdfs:comment "A company that delivers parts to customers."@en;
+      rdfs:label "Supplier"@en ;
+      rdfs:comment "A company that delivers parts to customers."@en ;
 .
 
 mat-lbl:hasSupplier
@@ -129,8 +131,8 @@ mat-lbl:hasSupplier
 mat-lbl:Customer
       a owl:Class;
       rdfs:subClassOf dbo:Company ;
-      rdfs:label "Customer"@en;
-      rdfs:comment "An industrial plant that orders and receives goods."@en;
+      rdfs:label "Customer"@en ;
+      rdfs:comment "An industrial plant that orders and receives goods."@en ;
 .
 
 mat-lbl:hasCustomer
@@ -376,40 +378,7 @@ mat-lbl:supplierData
       skos:notation "1Z"^^mat-lbl:DataID ; 
 .
 
-################ Printed label
-
-mat-lbl:PrintedEntry 
-      a owl:Class ;
-      rdfs:label "PrintedEntry"@en ;
-      rdfs:comment "..."@en ;
-.
-
-mat-lbl:exactLength
-      a owl:DatatypeProperty ;
-      rdfs:label "hasExactLength"@en ;
-      rdfs:comment "..."@en ;
-      rdfs:domain mat-lbl:PrintedEntry ;
-      rdfs:range xsd:int ;
-.
-
-mat-lbl:maximalLength
-      a owl:DatatypeProperty ;
-      rdfs:label "hasMaximalLength"@en ;
-      rdfs:comment "..."@en ;
-      rdfs:domain mat-lbl:PrintedEntry ;
-      rdfs:range xsd:int ;
-.
-
-# A string for a description.
-mat-lbl:format
-      a owl:DatatypeProperty ;
-      rdfs:label "hasFormat"@en ;
-      rdfs:comment "..."@en ;
-      rdfs:domain mat-lbl:PrintedEntry ;
-      rdfs:range xsd:string ;
-.
-
-################ Physical aspects
+################ Printed label and physical aspects
 
 mat-lbl:PhysicalLabel
       a owl:Class ;
@@ -423,14 +392,6 @@ mat-lbl:hasPhysicalLabel
       rdfs:comment "The set of data fields printed on the physical label."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range mat-lbl:PhysicalLabel ;
-.
-
-mat-lbl:hasPrintedEntry
-      a owl:ObjectProperty ;
-      rdfs:label "hasPrintedEntry"@en ;
-      rdfs:comment "Not all data fields have to be printed if the label is small."@en ;
-      rdfs:domain mat-lbl:PhysicalLabel ;
-      rdfs:range mat-lbl:PrintedEntry ;
 .
 
 # A string for a description.
@@ -449,6 +410,45 @@ mat-lbl:hasLayout
       rdfs:comment "To ensure to have enough free space for the code, its quiet zone and for the plain text, create a layout with maximum filled data fields."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range xsd:string ;  
+.
+
+mat-lbl:PrintedEntry 
+      a owl:Class ;
+      rdfs:label "PrintedEntry"@en ;
+      rdfs:comment "Not all datafields have to be printed on the physical label. Some printed entries do not correspond to data fields, such as the machine-readable data matrix, the supplier name and the part description."@en ;
+.
+
+mat-lbl:exactLength
+      a owl:DatatypeProperty ;
+      rdfs:label "hasExactLength"@en ;
+      rdfs:comment "If mutual agreed, blanks are only permissible in the data fields, if they are part of the information content or if they were provided to the supplier as stated in the order."@en ;
+      rdfs:domain mat-lbl:PrintedEntry ;
+      rdfs:range xsd:int ;
+.
+
+mat-lbl:maximalLength
+      a owl:DatatypeProperty ;
+      rdfs:label "hasMaximalLength"@en ;
+      rdfs:comment "If mutual agreed, blanks are only permissible in the data fields, if they are part of the information content or if they were provided to the supplier as stated in the order."@en ;
+      rdfs:domain mat-lbl:PrintedEntry ;
+      rdfs:range xsd:int ;
+.
+
+# A string for a description.
+mat-lbl:format
+      a owl:DatatypeProperty ;
+      rdfs:label "hasFormat"@en ;
+      rdfs:comment "e.g., N, A/N, YYYYMMDD, 12ISO3, ... ."@en ;
+      rdfs:domain mat-lbl:PrintedEntry ;
+      rdfs:range xsd:string ;
+.
+
+mat-lbl:hasPrintedEntry
+      a owl:ObjectProperty ;
+      rdfs:label "hasPrintedEntry"@en ;
+      rdfs:comment "Not all data fields have to be printed if the label is small."@en ;
+      rdfs:domain mat-lbl:PhysicalLabel ;
+      rdfs:range mat-lbl:PrintedEntry ;
 .
 
 mat-lbl:Adhesive
@@ -533,7 +533,7 @@ mat-lbl:hasFaceMaterial
       rdfs:range mat-lbl:FaceMaterial ; 
 .
 
-# Test Data Instances
+################ Test Data Instances
 
 conti:Automotive_Hungary a dbo:Company ;
       rdfs:label "Continental Automotive Hungary"@en ;
@@ -563,6 +563,7 @@ conti:sensor123 a mat-lbl:PartPackaging ;
 .
 
 
+################
 
 #mat-lbl:matLabelA rdf:type mat-lbl:MatLabel ;
 #      mat-lbl:hasDataField mat-lbl:a12s ;
