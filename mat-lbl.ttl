@@ -522,7 +522,7 @@ conti:Sample_Corporation a dbo:Company ;
       rdfs:label "Sample & Co."@en ;
 . 
 
-conti:sensor123 a mat-lbl:PartPackaging ;
+conti:Sensor123 a mat-lbl:PartPackaging ;
       mat-lbl:customerPartNumber "A2C0005836000" ;
       mat-lbl:manufacturerPartNumber "52ZIO5-31..78" ; 
       mat-lbl:orderingCode "52ZIO5-31..78" ;
