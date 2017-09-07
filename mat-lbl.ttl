@@ -123,11 +123,11 @@ mat-lbl:hasCustomer
 
 ################ Data fields
 
-#mat-lbl:DataID rdf:type rdfs:Datatype ;
-#      rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data." ;
-#      owl:equivalentClass [rdf:type rdfs:Datatype ; owl:onDatatype xsd:string ;
-#			   owl:withRestrictions ([xsd:pattern "([1-9]([0-9])?)?[A-Z]"])]
-#.
+mat-lbl:DataID rdf:type rdfs:Datatype ;
+      rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data." ;
+      owl:equivalentClass [rdf:type rdfs:Datatype ; owl:onDatatype xsd:string ;
+			   owl:withRestrictions ([xsd:pattern "([1-9]([0-9])?)?[A-Z]"])]
+.
 
 mat-lbl:labelVersion
       a owl:DatatypeProperty ;
