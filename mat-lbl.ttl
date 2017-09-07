@@ -96,20 +96,20 @@ mat-lbl:hasDataField
       rdfs:range mat-lbl:DataField ;
 .
 
-mat-lbl:Manufacturer
-      rdf:type owl:Class;
-      rdfs:subClassOf dbo:Company ;
-      rdfs:label "Manufacturer"@en;
-      rdfs:comment "A company that produces goods in large numbers."@en;
-.
-
-mat-lbl:hasManufacturer
-      rdf:type owl:ObjectProperty ;
-      rdfs:label "hasManufacturer"@en ;
-      rdfs:comment "A company that produces goods in large numbers."@en ;
-      rdfs:domain mat-lbl:PartPackaging ;
-      rdfs:range mat-lbl:Manufacturer ;
-.
+#mat-lbl:Manufacturer
+#      rdf:type owl:Class;
+#      rdfs:subClassOf dbo:Company ;
+#      rdfs:label "Manufacturer"@en;
+#      rdfs:comment "A company that produces goods in large numbers."@en;
+#.
+#
+#mat-lbl:hasManufacturer
+#      rdf:type owl:ObjectProperty ;
+#      rdfs:label "hasManufacturer"@en ;
+#      rdfs:comment "A company that produces goods in large numbers."@en ;
+#      rdfs:domain mat-lbl:PartPackaging ;
+#      rdfs:range mat-lbl:Manufacturer ;
+#.
 
 mat-lbl:Supplier
       rdf:type owl:Class;
@@ -421,7 +421,7 @@ mat-lbl:hasPhysicalLabel
       rdf:type owl:ObjectProperty ;
       rdfs:label "hasPhysicalLabel"@en ;
       rdfs:comment "The set of data fields printed on the physical label."@en ;
-      rdfs:domain mat-lbl:MatLabel ;
+      rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range mat-lbl:PhysicalLabel ;
 .
 
