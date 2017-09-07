@@ -76,15 +76,6 @@ mat-lbl:MatLabel
       rdfs:comment "A unique material label on the smallest package unit containing a clearly defined set of traceability information in human- and in machine-readable form."@en ;
 .
 
-
-#mat-lbl:hasDataField
-#      a owl:ObjectProperty ;
-#      rdfs:label "hasDataField"@en ;
-#      rdfs:comment "A MAT-label comprises a set of mandatory data fields."@en ;
-#      rdfs:domain mat-lbl:PartPackaging ;
-#      rdfs:range mat-lbl:DataField ;
-#.
-
 mat-lbl:Manufacturer
       a owl:Class;
       rdfs:subClassOf dbo:Company ;
@@ -132,26 +123,10 @@ mat-lbl:hasCustomer
 
 ################ Data fields
 
-#mat-lbl:hasDataContent
-#      rdf:type owl:DatatypeProperty ;
-#      rdfs:label "hasDataContent"@en ;
-#      rdfs:comment "If mutual agreed, blanks are only permissible in the data fields, if they are part of the information content or if they were provided to the supplier as stated in the order."@en ;
-#      rdfs:domain mat-lbl:DataField ;
-#      rdfs:range xsd:string ; 
-#.
-
 #mat-lbl:DataID rdf:type rdfs:Datatype ;
 #      rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data." ;
 #      owl:equivalentClass [rdf:type rdfs:Datatype ; owl:onDatatype xsd:string ;
 #			   owl:withRestrictions ([xsd:pattern "([1-9]([0-9])?)?[A-Z]"])]
-#.
-
-#mat-lbl:hasDataID
-#      rdf:type owl:DatatypeProperty ;
-#      rdfs:label "hasDataID"@en ;
-#      rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data." ;
-#      rdfs:domain mat-lbl:DataField ;
-#      rdfs:range mat-lbl:DataID ; 
 #.
 
 mat-lbl:labelVersion
@@ -161,7 +136,6 @@ mat-lbl:labelVersion
       rdfs:label "LabelVersion"@en ;
       rdfs:comment "The revision level is a fixed entry and serves the recognition of the label or its version"@en ;
       skos:notation "12S"^^mat-lbl:DataID ; 
-#      mat-lbl:hasDataID "12S"^^mat-lbl:DataID ;
 .
 
 mat-lbl:customerPartNumber
@@ -567,7 +541,7 @@ conti:sensor123 a mat-lbl:PartPackaging ;
       mat-lbl:hasCustomer conti:Automotive_Hungary ; 
 .
 
-
+################
 ################
 
 #mat-lbl:matLabelA rdf:type mat-lbl:MatLabel ;
