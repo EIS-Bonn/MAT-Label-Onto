@@ -74,14 +74,6 @@ mat-lbl:MatLabel
       rdfs:comment "A unique material label on the smallest package unit containing a clearly defined set of traceability information in human- and in machine-readable form."@en ;
 .
 
-mat-lbl:hasMatLabel
-      rdf:type owl:ObjectProperty ;
-      rdfs:label "hasMATLabel"@en ;
-      rdfs:comment "The set of data fields assigned to a part package."@en ;
-      rdfs:domain mat-lbl:PartPackaging ;
-      rdfs:range mat-lbl:PartPackaging ;
-.
-
 mat-lbl:DataField
       rdf:type owl:Class ;
       rdfs:label "DataField"@en ;
@@ -215,6 +207,7 @@ mat-lbl:partDescription
 
 mat-lbl:manufacturerNumber 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "ManufacturerNumber"@en ;
@@ -224,6 +217,7 @@ mat-lbl:manufacturerNumber
 
 mat-lbl:manufacturerLocation 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "ManufacturerLocation"@en ;
@@ -234,6 +228,7 @@ mat-lbl:manufacturerLocation
 
 mat-lbl:revisionLevel 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "RevisionLevel"@en ;
@@ -243,6 +238,7 @@ mat-lbl:revisionLevel
 
 mat-lbl:additionalPartInformation 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "AdditionalPartNumber"@en ;
@@ -252,6 +248,7 @@ mat-lbl:additionalPartInformation
 
 mat-lbl:manufacturingDate 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "ManufacturingDate"@en ;
@@ -261,6 +258,7 @@ mat-lbl:manufacturingDate
 
 mat-lbl:expirationDate 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "ExpirationDate"@en ;
@@ -270,6 +268,7 @@ mat-lbl:expirationDate
 
 mat-lbl:rohs 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "RoHS"@en ;
@@ -279,6 +278,7 @@ mat-lbl:rohs
 
 mat-lbl:msLevel 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "MSlevel"@en ;
@@ -288,6 +288,7 @@ mat-lbl:msLevel
 
 mat-lbl:purchaseOrderNumber
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "PurchaseOrderNumber"@en ;
@@ -297,6 +298,7 @@ mat-lbl:purchaseOrderNumber
 
 mat-lbl:shippingNoteNumber 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "ShippingNoteNumber"@en ;
@@ -307,6 +309,7 @@ mat-lbl:shippingNoteNumber
 # SupplierName is no DataField and is not contained in the Data Matrix Code! However, it is contained in the printed label.
 mat-lbl:supplierName 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "SupplierName"@en ;
@@ -315,6 +318,7 @@ mat-lbl:supplierName
 
 mat-lbl:supplierId 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "SupplierID"@en ;
@@ -324,6 +328,7 @@ mat-lbl:supplierId
 
 mat-lbl:packageId 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "PackageID"@en ;
@@ -333,6 +338,7 @@ mat-lbl:packageId
 
 mat-lbl:quantity 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:double ; 
       rdfs:label "Quantity"@en ;
@@ -342,6 +348,7 @@ mat-lbl:quantity
 
 mat-lbl:batchCounter 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "BatchCounter"@en ;
@@ -351,6 +358,7 @@ mat-lbl:batchCounter
 
 mat-lbl:firstBatchNumber 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "FirstBatchNumber"@en ;
@@ -360,6 +368,7 @@ mat-lbl:firstBatchNumber
 
 mat-lbl:secondBatchNumber 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "SecondBatchNumber"@en ;
@@ -369,6 +378,7 @@ mat-lbl:secondBatchNumber
 
 mat-lbl:supplierData 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "SupplierData"@en ;
