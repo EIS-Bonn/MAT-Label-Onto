@@ -85,10 +85,10 @@ mat-lbl:Manufacturer
 
 mat-lbl:hasManufacturer
       a owl:ObjectProperty ;
-      rdfs:label "hasManufacturer"@en ;
-      rdfs:comment "A company that produces goods in large numbers."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range mat-lbl:Manufacturer ;
+      rdfs:label "hasManufacturer"@en ;
+      rdfs:comment "A company that produces goods in large numbers."@en ;
 .
 
 mat-lbl:Supplier
@@ -100,10 +100,10 @@ mat-lbl:Supplier
 
 mat-lbl:hasSupplier
       a owl:ObjectProperty ;
-      rdfs:label "hasSupplier"@en ;
-      rdfs:comment "A company that delivers parts to customers."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range mat-lbl:Supplier ;
+      rdfs:label "hasSupplier"@en ;
+      rdfs:comment "A company that delivers parts to customers."@en ;
 .
 
 mat-lbl:Customer
@@ -115,10 +115,10 @@ mat-lbl:Customer
 
 mat-lbl:hasCustomer
       a owl:ObjectProperty ;
-      rdfs:label "hasCustomer"@en ;
-      rdfs:comment "An industrial plant that orders and receives goods."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
       rdfs:range mat-lbl:Customer ;
+      rdfs:label "hasCustomer"@en ;
+      rdfs:comment "An industrial plant that orders and receives goods."@en ;
 .
 
 ################ Data fields
@@ -126,11 +126,12 @@ mat-lbl:hasCustomer
 mat-lbl:DataID rdf:type rdfs:Datatype ;
       rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data." ;
       owl:equivalentClass [rdf:type rdfs:Datatype ; owl:onDatatype xsd:string ;
-			   owl:withRestrictions ([xsd:pattern "([1-9]([0-9])?)?[A-Z]"])]
+			   owl:withRestrictions ([xsd:pattern "([1-9]([0-9])?)?[A-Z]"])] ;
 .
 
 mat-lbl:labelVersion
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "LabelVersion"@en ;
@@ -141,6 +142,7 @@ mat-lbl:labelVersion
 
 mat-lbl:customerPartNumber
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "CustomerPartNumber"@en ;
@@ -151,16 +153,18 @@ mat-lbl:customerPartNumber
 
 mat-lbl:manufacturerPartNumber 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "ManufacturerPartNumber"@en ;
       rdfs:comment "Internal manufacturer part number."@en ;
-      skos:example "SL105C103MAA-S" ;
       skos:notation "1P"^^mat-lbl:DataID ; 
+      skos:example "SL105C103MAA-S" ;
 .
 
 mat-lbl:orderingCode 
       a owl:DatatypeProperty ;
+      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "OrderingCode"@en ;
@@ -171,12 +175,12 @@ mat-lbl:orderingCode
 # PartDescription is no DataField and is not contained in the Data Matrix Code! However, it is contained in the printed label.
 mat-lbl:partDescription 
       a owl:DatatypeProperty ;
+#      rdfs:subClassOf mat-lbl:PrintedEntry ;
       rdfs:domain mat-lbl:PartPackaging;
-      rdfs:range xsd:string ; 
-      rdfs:subClassOf mat-lbl:PrintedEntry ;
+      rdfs:range xsd:string ;
       rdfs:label "PartDescription"@en ;
-      skos:example "10 nF / 50 V / Ker" ;
       rdfs:comment "Clear-text description of the part (or part name), so that persons who are not familiar with the manufacturer's naming convention can understand what kind of component this is."@en ;
+      skos:example "10 nF / 50 V / Ker" ;
 .
 
 mat-lbl:manufacturerNumber 
@@ -197,8 +201,8 @@ mat-lbl:manufacturerLocation
       rdfs:range xsd:string ; 
       rdfs:label "ManufacturerLocation"@en ;
       rdfs:comment "Naming of the manufacturing location / locations."@en ;
-      skos:example "DEU-BERLIN - In case of only one location in town; DEU-BERLIN1, DEU-BERLIN2  - In case of two location in town" @en;
       skos:notation "10V"^^mat-lbl:DataID ; 
+      skos:example "DEU-BERLIN - In case of only one location in town; DEU-BERLIN1, DEU-BERLIN2  - In case of two location in town" @en;
 .
 
 mat-lbl:revisionLevel 
@@ -287,7 +291,7 @@ mat-lbl:shippingNoteNumber
 # SupplierName is no DataField and is not contained in the Data Matrix Code! However, it is contained in the printed label.
 mat-lbl:supplierName 
       a owl:DatatypeProperty ;
-      rdfs:subPropertyOf mat-lbl:datafield ; 
+#      rdfs:subPropertyOf mat-lbl:datafield ; 
       rdfs:domain mat-lbl:PartPackaging;
       rdfs:range xsd:string ; 
       rdfs:label "SupplierName"@en ;
