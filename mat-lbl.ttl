@@ -20,6 +20,7 @@
 @prefix dbo:     <http://dbpedia.org/ontology#> .
 @prefix dbr:     <http://dbpedia.org/resource#> .
 @prefix dul:     <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix conti:     <http://www.continental.com/vocab/products#> .
 
 mat-lbl: rdf:type owl:Ontology ;
       dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Information for Purchased Production Parts" ;
@@ -651,7 +652,7 @@ conti:Automotive_Hungary a dbo:Company ;
 . 
 
 conti:sensor123 a mat-lbl:MatLabel ;
-				mat-lbl:customerPartNumber "A2C0005836000"
+				mat-lbl:customerPartNumber "A2C0005836000" ;
 				mat-lbl:manufacturerPartNumber "52ZIO5-31..78" ; 
 				mat-lbl:orderingCode "52ZIO5-31..78" ;
 				mat-lbl:partDescription "Pressure Sensor" ; 
