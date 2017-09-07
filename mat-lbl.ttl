@@ -20,9 +20,9 @@
 @prefix dbo:     <http://dbpedia.org/ontology#> .
 @prefix dbr:     <http://dbpedia.org/resource#> .
 @prefix dul:     <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
-@prefix conti:     <http://www.continental.com/vocab/products#> .
+@prefix conti:   <http://www.continental.com/vocab/products#> .
 
-mat-lbl: rdf:type owl:Ontology ;
+mat-lbl: a owl:Ontology ;
       dc11:description "A vocabulary to describe the Requirements on Marking of Goods and Accompanying Information for Purchased Production Parts" ;
       dc11:title "MAT-Label Vocabulary"@en ;
       dc:created "2017-08-23"^^xsd:date ;
@@ -37,25 +37,25 @@ mat-lbl: rdf:type owl:Ontology ;
 .
 
 <https://orcid.org/0000-0002-1019-3606>
-    rdf:type schema:Person ;
+    a schema:Person ;
     rdfs:label "Anna Kasprzik" ;
     schema:affiliation <http://dbpedia.org/resource/German_National_Library_of_Science_and_Technology> ;
 .
 
 <http://sda.cs.uni-bonn.de/people/irlan-grangel-gonzalez/>
-    rdf:type schema:Person ;
+    a schema:Person ;
     rdfs:label "Irlán Grangel-González" ;
     schema:affiliation <http://dbpedia.org/resource/University_of_Bonn> ;
 .
 
 <http://sda.cs.uni-bonn.de/people/niklas-petersen/>
-    rdf:type schema:Person ;
+    a schema:Person ;
     rdfs:label "Niklas Petersen" ;
     schema:affiliation <http://dbpedia.org/resource/University_of_Bonn> ;
 .
 
 <http://sda.cs.uni-bonn.de/people/lavdim-halilaj/>
-    rdf:type schema:Person ;
+    a schema:Person ;
     rdfs:label "Lavdim Halilaj" ;
     schema:affiliation <http://dbpedia.org/resource/University_of_Bonn> ;
 .
@@ -63,19 +63,19 @@ mat-lbl: rdf:type owl:Ontology ;
 ################ General
 
 mat-lbl:PartPackaging
-      rdf:type owl:Class ;
+      a owl:Class ;
       rdfs:label "PartPackaging"@en ;
       rdfs:comment "The smallest package does not contain any additional sub-packaging usually."@en ;
 .
 
 mat-lbl:MatLabel
-      rdf:type owl:Class ;
+      a owl:Class ;
       rdfs:label "MATLabel"@en ;
       rdfs:comment "A unique material label on the smallest package unit containing a clearly defined set of traceability information in human- and in machine-readable form."@en ;
 .
 
 mat-lbl:hasMatLabel
-      rdf:type owl:ObjectProperty ;
+      a owl:ObjectProperty ;
       rdfs:label "hasMATLabel"@en ;
       rdfs:comment "The set of data fields assigned to a part package."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
@@ -83,13 +83,13 @@ mat-lbl:hasMatLabel
 .
 
 mat-lbl:DataField
-      rdf:type owl:Class ;
+      a owl:Class ;
       rdfs:label "DataField"@en ;
       rdfs:comment "The Data Matrix Code on the MAT-Label has to contain all data fields including its data identifier in the order represented by the column number."@en ;
 .
 
 mat-lbl:hasDataField
-      rdf:type owl:ObjectProperty ;
+      a owl:ObjectProperty ;
       rdfs:label "hasDataField"@en ;
       rdfs:comment "A MAT-label comprises a set of mandatory data fields."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
@@ -97,14 +97,14 @@ mat-lbl:hasDataField
 .
 
 mat-lbl:Manufacturer
-      rdf:type owl:Class;
+      a owl:Class;
       rdfs:subClassOf dbo:Company ;
       rdfs:label "Manufacturer"@en;
       rdfs:comment "A company that produces goods in large numbers."@en;
 .
 
 mat-lbl:hasManufacturer
-      rdf:type owl:ObjectProperty ;
+      a owl:ObjectProperty ;
       rdfs:label "hasManufacturer"@en ;
       rdfs:comment "A company that produces goods in large numbers."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
@@ -112,14 +112,14 @@ mat-lbl:hasManufacturer
 .
 
 mat-lbl:Supplier
-      rdf:type owl:Class;
+      a owl:Class;
       rdfs:subClassOf dbo:Company ;
       rdfs:label "Supplier"@en;
       rdfs:comment "A company that delivers parts to customers."@en;
 .
 
 mat-lbl:hasSupplier
-      rdf:type owl:ObjectProperty ;
+      a owl:ObjectProperty ;
       rdfs:label "hasSupplier"@en ;
       rdfs:comment "A company that delivers parts to customers."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
@@ -127,14 +127,14 @@ mat-lbl:hasSupplier
 .
 
 mat-lbl:Customer
-      rdf:type owl:Class;
+      a owl:Class;
       rdfs:subClassOf dbo:Company ;
       rdfs:label "Customer"@en;
       rdfs:comment "An industrial plant that orders and receives goods."@en;
 .
 
 mat-lbl:hasCustomer
-      rdf:type owl:ObjectProperty ;
+      a owl:ObjectProperty ;
       rdfs:label "hasCustomer"@en ;
       rdfs:comment "An industrial plant that orders and receives goods."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
@@ -143,19 +143,19 @@ mat-lbl:hasCustomer
 
 ################ Data fields
 
-mat-lbl:hasDataContent
-      rdf:type owl:DatatypeProperty ;
-      rdfs:label "hasDataContent"@en ;
-      rdfs:comment "If mutual agreed, blanks are only permissible in the data fields, if they are part of the information content or if they were provided to the supplier as stated in the order."@en ;
-      rdfs:domain mat-lbl:DataField ;
-      rdfs:range xsd:string ; 
-.
+#mat-lbl:hasDataContent
+#      rdf:type owl:DatatypeProperty ;
+#      rdfs:label "hasDataContent"@en ;
+#      rdfs:comment "If mutual agreed, blanks are only permissible in the data fields, if they are part of the information content or if they were provided to the supplier as stated in the order."@en ;
+#      rdfs:domain mat-lbl:DataField ;
+#      rdfs:range xsd:string ; 
+#.
 
-mat-lbl:DataID rdf:type rdfs:Datatype ;
-      rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data." ;
-      owl:equivalentClass [rdf:type rdfs:Datatype ; owl:onDatatype xsd:string ;
-			   owl:withRestrictions ([xsd:pattern "([1-9]([0-9])?)?[A-Z]"])]
-.
+#mat-lbl:DataID rdf:type rdfs:Datatype ;
+#      rdfs:comment "The content of each data field is described by a data identifier. Within each data field, the data identifier precedes the data." ;
+#      owl:equivalentClass [rdf:type rdfs:Datatype ; owl:onDatatype xsd:string ;
+#			   owl:withRestrictions ([xsd:pattern "([1-9]([0-9])?)?[A-Z]"])]
+#.
 
 #mat-lbl:hasDataID
 #      rdf:type owl:DatatypeProperty ;
@@ -379,21 +379,21 @@ mat-lbl:supplierData
 ################ Printed label
 
 mat-lbl:PrintedEntry 
-      rdf:type owl:Class ;
+      a owl:Class ;
       rdfs:label "PrintedEntry"@en ;
       rdfs:comment "..."@en ;
 .
 
-mat-lbl:hasExactLength
-      rdf:type owl:DatatypeProperty ;
+mat-lbl:exactLength
+      a owl:DatatypeProperty ;
       rdfs:label "hasExactLength"@en ;
       rdfs:comment "..."@en ;
       rdfs:domain mat-lbl:PrintedEntry ;
       rdfs:range xsd:int ;
 .
 
-mat-lbl:hasMaximalLength
-      rdf:type owl:DatatypeProperty ;
+mat-lbl:maximalLength
+      a owl:DatatypeProperty ;
       rdfs:label "hasMaximalLength"@en ;
       rdfs:comment "..."@en ;
       rdfs:domain mat-lbl:PrintedEntry ;
@@ -401,8 +401,8 @@ mat-lbl:hasMaximalLength
 .
 
 # A string for a description.
-mat-lbl:hasFormat
-      rdf:type owl:DatatypeProperty ;
+mat-lbl:format
+      a owl:DatatypeProperty ;
       rdfs:label "hasFormat"@en ;
       rdfs:comment "..."@en ;
       rdfs:domain mat-lbl:PrintedEntry ;
@@ -412,13 +412,13 @@ mat-lbl:hasFormat
 ################ Physical aspects
 
 mat-lbl:PhysicalLabel
-      rdf:type owl:Class ;
+      a owl:Class ;
       rdfs:label "PhysicalLabel"@en ;
       rdfs:comment "Recycling regulations have to be obeyed."@en ;
 .
 
 mat-lbl:hasPhysicalLabel
-      rdf:type owl:ObjectProperty ;
+      a owl:ObjectProperty ;
       rdfs:label "hasPhysicalLabel"@en ;
       rdfs:comment "The set of data fields printed on the physical label."@en ;
       rdfs:domain mat-lbl:PartPackaging ;
@@ -426,7 +426,7 @@ mat-lbl:hasPhysicalLabel
 .
 
 mat-lbl:hasPrintedEntry
-      rdf:type owl:ObjectProperty ;
+      a owl:ObjectProperty ;
       rdfs:label "hasPrintedEntry"@en ;
       rdfs:comment "Not all data fields have to be printed if the label is small."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
@@ -435,7 +435,7 @@ mat-lbl:hasPrintedEntry
 
 # A string for a description.
 mat-lbl:hasSize
-      rdf:type owl:DatatypeProperty ;
+      a owl:DatatypeProperty ;
       rdfs:label "hasSize"@en ;
       rdfs:comment "The size of the MAT-Label can be chosen by the supplier considering the size of the smallest package unit."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
@@ -444,7 +444,7 @@ mat-lbl:hasSize
 
 # A string for a description.
 mat-lbl:hasLayout
-      rdf:type owl:DatatypeProperty ;
+      a owl:DatatypeProperty ;
       rdfs:label "hasLayout"@en ;
       rdfs:comment "To ensure to have enough free space for the code, its quiet zone and for the plain text, create a layout with maximum filled data fields."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
@@ -452,24 +452,24 @@ mat-lbl:hasLayout
 .
 
 mat-lbl:Adhesive
-      rdf:type owl:Class ;
+      a owl:Class ;
       rdfs:label "Adhesive"@en ;
       rdfs:comment "Material for the back of physical labels."@en ;
       owl:oneOf (mat-lbl:permanent mat-lbl:removable) ;
 .
 
-mat-lbl:permanent rdf:type owl:NamedIndividual ; 
+mat-lbl:permanent a owl:NamedIndividual ; 
       rdfs:label "permanent"@en ;
       rdfs:comment "Long lasting material used for the back of physical labels."@en ;
 .
 
-mat-lbl:removable rdf:type owl:NamedIndividual ; 
+mat-lbl:removable a owl:NamedIndividual ; 
      rdfs:label "removable"@en ;
      rdfs:comment "Residue-free material used for the back of physical labels."@en ;
 .
 
 mat-lbl:hasAdhesive
-      rdf:type owl:ObjectProperty ;
+      a owl:ObjectProperty ;
       rdfs:label "hasAdhesive"@en ;
       rdfs:comment "Applies to physical labels."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
@@ -478,7 +478,7 @@ mat-lbl:hasAdhesive
 
 # This class is characterized by having a permanent adhesive.
 mat-lbl:NonremovableLabel
-      rdf:type owl:Class ;
+      a owl:Class ;
       rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:subClassOf [ rdf:type owl:Restriction ;
            owl:onProperty mat-lbl:hasAdhesive ;
@@ -490,7 +490,7 @@ mat-lbl:NonremovableLabel
 
 # This class is characterized by having a removable adhesive.
 mat-lbl:PeelableLabel
-      rdf:type owl:Class ;
+      a owl:Class ;
       rdfs:subClassOf mat-lbl:PhysicalLabel ;
       rdfs:subClassOf [ rdf:type owl:Restriction ;
            owl:onProperty mat-lbl:hasAdhesive ;
@@ -500,64 +500,93 @@ mat-lbl:PeelableLabel
       rdfs:comment "With removable adhesive adjusted to the material of the smallest package unit, residue free."@en ;
 .
 
-_:x rdf:type owl:AllDisjointClasses ;
+_:x a owl:AllDisjointClasses ;
       owl:members ( mat-lbl:NonremovableLabel mat-lbl:PeelableLabel ) .
 
 mat-lbl:FaceMaterial
-      rdf:type owl:Class ;
+      a owl:Class ;
       rdfs:label "FaceMaterial"@en ;
       rdfs:comment "Applies to physical labels."@en ;
       owl:oneOf (mat-lbl:white mat-lbl:reversecoated mat-lbl:mat) ;
 .
 
-mat-lbl:white rdf:type owl:NamedIndividual ; 
+mat-lbl:white a owl:NamedIndividual ; 
       rdfs:label "white"@en ;
       rdfs:comment "White material used for the front of physical labels."@en ;
 .
 
-mat-lbl:reversecoated rdf:type owl:NamedIndividual ; 
+mat-lbl:reversecoated a owl:NamedIndividual ; 
       rdfs:label "reversecoated"@en ;
       rdfs:comment "Reverse coated material used for the front of physical labels."@en ;
 .
 
-mat-lbl:mat rdf:type owl:NamedIndividual ; 
+mat-lbl:mat a owl:NamedIndividual ; 
       rdfs:label "mat"@en ;
       rdfs:comment "Mat material used for the front of physical labels."@en ;
 .
 
 mat-lbl:hasFaceMaterial
-      rdf:type owl:ObjectProperty ;
+      a owl:ObjectProperty ;
       rdfs:label "hasFaceMaterial"@en ;
       rdfs:comment "Material for the face of physical labels."@en ;
       rdfs:domain mat-lbl:PhysicalLabel ;
       rdfs:range mat-lbl:FaceMaterial ; 
 .
 
-################ Instances
+# Test Data Instances
 
-mat-lbl:matLabelA rdf:type mat-lbl:MatLabel ;
-      mat-lbl:hasDataField mat-lbl:a12s ;
-      mat-lbl:hasDataField mat-lbl:ap ;
-      mat-lbl:hasDataField mat-lbl:a1p ;
-      mat-lbl:hasDataField mat-lbl:a31p ;
-      mat-lbl:hasDataField mat-lbl:a12v ;
-      mat-lbl:hasDataField mat-lbl:a10v ;
-      mat-lbl:hasDataField mat-lbl:a2p ;
-      mat-lbl:hasDataField mat-lbl:a20p ;
-      mat-lbl:hasDataField mat-lbl:a6d ;
-      mat-lbl:hasDataField mat-lbl:a14d ;
-      mat-lbl:hasDataField mat-lbl:a30p ;
-      mat-lbl:hasDataField mat-lbl:az ;
-      mat-lbl:hasDataField mat-lbl:ak ;
-      mat-lbl:hasDataField mat-lbl:a16k ;
-      mat-lbl:hasDataField mat-lbl:av ;
-      mat-lbl:hasDataField mat-lbl:a3s ;
-      mat-lbl:hasDataField mat-lbl:aq ;
-      mat-lbl:hasDataField mat-lbl:a20t ;
-      mat-lbl:hasDataField mat-lbl:a1t ;
-      mat-lbl:hasDataField mat-lbl:a2t ;
-      mat-lbl:hasDataField mat-lbl:a1z ;
+conti:Automotive_Hungary a dbo:Company ;
+      rdfs:label "Continental Automotive Hungary"@en ;
+. 
+
+conti:Sample_Corporation a dbo:Company ;
+      rdfs:label "Sample & Co."@en ;
+. 
+
+conti:sensor123 a mat-lbl:PartPackaging ;
+      mat-lbl:customerPartNumber "A2C0005836000" ;
+      mat-lbl:manufacturerPartNumber "52ZIO5-31..78" ; 
+      mat-lbl:orderingCode "52ZIO5-31..78" ;
+      mat-lbl:partDescription "Pressure Sensor" ; 
+      mat-lbl:manufacturerLocation "MEX-TORREON" ;
+      mat-lbl:expirationDate "20150306" ; 
+      mat-lbl:msLevel "N" ;
+      mat-lbl:shippingNoteNumber "2014-53006" ; 
+      mat-lbl:packageId "S4065212024201" ;
+      mat-lbl:quantity 400 ;
+      mat-lbl:firstBatchNumber "5300621" ;
+      mat-lbl:supplierId "354325" ;
+      mat-lbl:supplierData "Warehouse 4, Gate 16A" ;
+      mat-lbl:supplierName "Sample & Co." ;
+      mat-lbl:hasSupplier conti:Sample_Corporation ;
+      mat-lbl:hasCustomer conti:Automotive_Hungary ; 
 .
+
+
+
+#mat-lbl:matLabelA rdf:type mat-lbl:MatLabel ;
+#      mat-lbl:hasDataField mat-lbl:a12s ;
+#      mat-lbl:hasDataField mat-lbl:ap ;
+#      mat-lbl:hasDataField mat-lbl:a1p ;
+#      mat-lbl:hasDataField mat-lbl:a31p ;
+#      mat-lbl:hasDataField mat-lbl:a12v ;
+#      mat-lbl:hasDataField mat-lbl:a10v ;
+#      mat-lbl:hasDataField mat-lbl:a2p ;
+#      mat-lbl:hasDataField mat-lbl:a20p ;
+#      mat-lbl:hasDataField mat-lbl:a6d ;
+#      mat-lbl:hasDataField mat-lbl:a14d ;
+#      mat-lbl:hasDataField mat-lbl:a30p ;
+#      mat-lbl:hasDataField mat-lbl:az ;
+#      mat-lbl:hasDataField mat-lbl:ak ;
+#      mat-lbl:hasDataField mat-lbl:a16k ;
+#      mat-lbl:hasDataField mat-lbl:av ;
+#      mat-lbl:hasDataField mat-lbl:a3s ;
+#      mat-lbl:hasDataField mat-lbl:aq ;
+#      mat-lbl:hasDataField mat-lbl:a20t ;
+#      mat-lbl:hasDataField mat-lbl:a1t ;
+#      mat-lbl:hasDataField mat-lbl:a2t ;
+#      mat-lbl:hasDataField mat-lbl:a1z ;
+#.
 
 #mat-lbl:a12s rdf:type mat-lbl:DataField ;
 #      mat-lbl:hasDataContent "0002" ;
@@ -642,34 +671,3 @@ mat-lbl:matLabelA rdf:type mat-lbl:MatLabel ;
 #mat-lbl:a1z rdf:type mat-lbl:DataField ;
 #      mat-lbl:hasDataContent "Special delivery" ;
 #.
-#
-
-# TEST DATA
-
-conti:Automotive_Hungary a dbo:Company ;
-	rdfs:label "Continental Automotive Hungary"@de ;
-. 
-
-conti:Sample_Corporation a dbo:Company ;
-	rdfs:label "Sample & Co."@de ;
-. 
-
-
-conti:sensor123 a mat-lbl:PartPackaging ;
-				mat-lbl:customerPartNumber "A2C0005836000" ;
-				mat-lbl:manufacturerPartNumber "52ZIO5-31..78" ; 
-				mat-lbl:orderingCode "52ZIO5-31..78" ;
-				mat-lbl:partDescription "Pressure Sensor" ; 
-				mat-lbl:manufacturerLocation "MEX-TORREON" ;
-				mat-lbl:expirationDate "20150306" ; 
-				mat-lbl:msLevel "N" ;
-				mat-lbl:shippingNoteNumber "2014-53006" ; 
-				mat-lbl:packageId "S4065212024201" ;
-				mat-lbl:quantity 400 ;
-				mat-lbl:firstBatchNumber "5300621" ;
-				mat-lbl:supplierId "354325" ;
-				mat-lbl:supplierData "Warehouse 4, Gate 16A" ;
-				mat-lbl:supplierName "Sample & Co." ;
-				mat-lbl:hasSupplier conti:Sample_Corporation ;
-				mat-lbl:hasCustomer conti:Automotive_Hungary ; 
-				.
